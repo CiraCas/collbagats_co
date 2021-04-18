@@ -4,6 +4,8 @@
   --primario: #f57927;
   --primarioflojo:#f8a46b;
   --secundario:  #0fc2d6;
+  --secundarioOscuro: #073338;
+  --secundarioFlojo: #81c9d1;
   
 }
 
@@ -79,6 +81,9 @@ ul{
 .fab:hover,
 .fas:hover{
   color: var(--secundario);
+}
+.icon-admin {
+  margin-right: 0;
 }
 
 /*Navegacion*/
@@ -160,7 +165,7 @@ ul{
 
 .bo-aside{
   width: 100%;
-  background-color: teal;
+  background-color: var(--secundarioFlojo);
   
   padding: 1rem;
   box-sizing: border-box;
@@ -186,7 +191,7 @@ ul{
 
 .bo-main{
   width: 100%;
-  background-color: coral;
+  background-color: var(--primarioflojo);
   padding: 1rem;
   box-sizing: border-box;
 }
@@ -208,9 +213,15 @@ ul{
   
   width: 100%;
   height: 100px;
-  background-color: yellowgreen;
+  background-color: var(--secundarioOscuro);
   border-bottom: 1px solid white;
+  
 
+}
+.menu-list-item a {
+  color: var(--blanco);
+  font-size: 2rem;
+  font-weight: bold;
 }
 .menu-list-item {
   display: flex;
@@ -224,3 +235,7 @@ ul{
 .bo-aside .menu-navigation .menu-list .menu-list-item.activa {
   background-color: var(--primario);
 }
+.tabla-admin {
+  background-color: var(--primario);
+}
+
