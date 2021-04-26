@@ -1,4 +1,4 @@
-function validaContraseña(){
+function validaCampos(){
     if(validaPassword() == false){
         return false;
     }
@@ -7,8 +7,13 @@ function validaContraseña(){
     }
     return true;
 }
-let inputPassword = document.forms["formulario"]["password"];
-inputPassword.addEventListener("mouseleave",validaPassword,false);
+try {
+    
+    let inputPassword = document.forms["formulario"]["password"];
+    inputPassword.addEventListener("mouseleave",validaPassword,false);
+} catch (error) {
+    console.log('error de password!');
+}
 function validaPassword(){
     let formulario = document.forms["formulario"];
     let password = formulario["password"].value;

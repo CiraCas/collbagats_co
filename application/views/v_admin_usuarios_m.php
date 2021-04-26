@@ -17,7 +17,6 @@
 
             <label>Segundo apellido</label>
             <input type="text" name="apellido2" id="apellido2" value= <?=$usuario['apellido2']?>>
-
             <label>Email*</label>
             <input type="email" name="mail" id="mail" value= <?=$usuario['mail']?>>
             <?php if($usuario['mail'] == $this->session->email){?>

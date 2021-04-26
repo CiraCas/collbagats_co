@@ -32,4 +32,4 @@
 <?php } else { 
  redirect( base_url('index.php/inicio/index')); 
 
-} ?>
+} ?> 

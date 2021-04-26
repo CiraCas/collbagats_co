@@ -68,7 +68,7 @@
         </tbody>
     </table> 
 </section>
-<section>
+<!-- <section>
     <h3>Cambia tu contraseña</h3>
     <form class="formulario" name="formulario" method='post' action='<?= base_url("index.php/usuarios/cambiar_password");?>' onsubmit="return validaContraseña();">
         <label>Nueva Contraseña</label>
@@ -80,7 +80,7 @@
         <button>Cambiar</button>
     </form>
 </section>
-
+ -->
 
 <!-- javaScript -->
 <script src="<?= base_url("assets/js/usuarios.js");?>" defer></script>

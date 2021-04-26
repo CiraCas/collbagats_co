@@ -11,6 +11,7 @@
         ?>! Bienvenid@
         <form method='post' action='<?= base_url("index.php/gatos/desconectar");?>'>
         <input type='submit'  value='Desconectar' name='desconectar'/>
+        </form>
         </h2>
         
         <nav >
