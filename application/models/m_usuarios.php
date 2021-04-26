@@ -2,13 +2,14 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class m_usuarios extends CI_Model {
-    public function insertUsuario(){
+    public function insert_usuario(){
         $array=array(
-            "mail"=>"javier@gmail.com",
-            "nombre"=>"Javier",
-            "apellido1"=>"Hernandez",
-            "apellido2"=>"Lopez",
-            "tipo_usuario"=>2
+            "mail"=> $this->input->post('mail'),
+            "nombre"=> $this->input->post('nombre'),
+            "apellido1"=> $this->input->post('apellido1'),
+            "apellido2"=>$this->input->post('apellido2'),
+            "tipo_usuario"=>$this->input->post('permisos'),
+            "contrasenia"=>'212223' 
         );
         $this->db->insert("usuarios",$array);
 
@@ -24,6 +25,19 @@ class m_usuarios extends CI_Model {
             return NULL;
         }
     }
+    
+    public function select_usuarios_id($id){
+        $this->db->select("*");
+        $this->db->from("usuarios");
+        $this->db->where("idusuario", $id);
+        $query=$this->db->get();
+        
+        if($query->num_rows()>0){
+            return $query->result_array();
+        }else{
+            return NULL;
+        }
+    }
 
     function comprobar_email($email) {
         $query = $this->db->select('*')
@@ -33,6 +47,17 @@ class m_usuarios extends CI_Model {
             ->get()->row_array();
 
         return $query;
+    }
+
+    function cambiar_password($new_password){
+        $this->db->set('contrasenia', $new_password);
+        $this->db->where('mail', $this->session->email);
+        $this->db->update('usuarios');
+    }
+    
+    function borrar_usuario($mail){
+        $this->db->where('mail', $mail);
+        $this->db->delete('usuarios');
     }
 
 }

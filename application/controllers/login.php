@@ -35,11 +35,9 @@ class Login extends CI_Controller {
                 $this->session->email = $email;
                 $this->session->password = $password;
                 $this->session->nombre = $respuesta["nombre"];
-
+                $this->session->tipo_usuario = $respuesta["tipo_usuario"];
+                redirect( base_url('index.php/gatos/gato') );
             } 
-            if($respuesta["tipo_usuario"] == 1){
-                redirect( base_url('index.php/admin/gatos') );
-            }
             
         } else {
             redirect( base_url('index.php/login/login_v/error') );

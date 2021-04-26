@@ -6,7 +6,7 @@
         <div></div>
         <ul class="menu-list">
             <li class="menu-list-item <?php if($activa == 'gatos') echo 'activa';?>">
-                <a href="<?= base_url("index.php/admin/gatos");?>">Gatos</a>
+                <a href="<?= base_url("index.php/gatos/gato");?>">Gatos</a>
             </li>
             <li class="menu-list-item <?php if($activa == 'adopciones') echo 'activa';?>">
                 <a href="#">Adopciones</a>
@@ -15,7 +15,7 @@
                 <a href="#">Noticias</a>
             </li>
             <li class="menu-list-item <?php if($activa == 'usuarios') echo 'activa';?>">
-                <a href="<?= base_url("index.php/admin/usuarios");?>">Usuarios</a>
+                <a href="<?= base_url("index.php/usuarios/usuario");?>">Usuarios</a>
             </li>
         </ul>
     </nav>

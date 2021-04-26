@@ -19,7 +19,7 @@ function validaPassword(){
     let pattr = new RegExp("^[0-9a-zA-Z]+$");
     let pattr2 = new RegExp("^.{4,9}$");
     if(pattr.test(password) == false){
-        span.innerHTML="Password solo puede contener letras o numeros";
+        span.innerHTML="Password solo puede contener letras o números";
         return false
     }
     if(pattr2.test(password) == false){
@@ -31,7 +31,7 @@ function validaPassword(){
     
 }
 let inputEmail = document.forms["formulario"]["email"];
-inputEmail.addEventListener("mouseleave",validaEmail,false);
+inputEmail.addEventListener("blur",validaEmail,false);
 function validaEmail(){
     let formulario = document.forms["formulario"];
     let email = formulario["email"].value;

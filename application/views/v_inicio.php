@@ -26,10 +26,10 @@
           <a href="https://www.facebook.com/collbagats">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="#"></a>
+          <a href="#">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#"></a>
+          <a href="https://www.instagram.com/gats_de_collbato/">
             <i class="fab fa-instagram"></i>
           </a>
         </div>
