@@ -17,14 +17,14 @@ function validaPassword(){
     let span =  document.getElementById("msgpassword");
     //en pattr añado el + porque sin el + si hacía un input de letra/numero/letra ejem= e5g fallaba y la que vimos en clase acepta tildes y _
     let pattr = new RegExp("^[0-9a-zA-Z]+$");
-    let pattr2 = new RegExp("^.{4,9}$");
+    let pattr2 = new RegExp("^.{4,16}$");
     if(pattr.test(password) == false){
         span.innerHTML="Password solo puede contener letras o números";
         return false
     }
     if(pattr2.test(password) == false){
     
-        span.innerHTML="Password ha de tener entre 4 y 9 caracteres";
+        span.innerHTML="Password ha de tener entre 4 y 16 caracteres";
         return false
     }
     span.innerHTML="";

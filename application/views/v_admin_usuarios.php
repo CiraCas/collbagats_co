@@ -1,10 +1,4 @@
-<h2>Hola
-    <?php
-    if(isset($this->session->nombre)){
-        echo $this->session->nombre;
-    }
-    ?>! Bienvenid@
-</h2>
+<h2>Usuarios</h2>
 <section>
     <h3>Añadir usuario</h3>
     <form action="<?= base_url("index.php/usuarios/insertar_usuario");?>" method="post" >
@@ -87,6 +81,6 @@
     </form>
 </section>
 
-<form method='post' action='<?= base_url("index.php/usuarios/desconectar");?>'>
-    <input type='submit'  value='Desconectar' name='desconectar'/>
-</form>
+
+<!-- javaScript -->
+<script src="<?= base_url("assets/js/usuarios.js");?>" defer></script>

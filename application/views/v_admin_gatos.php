@@ -1,10 +1,4 @@
-<h2>Hola
-    <?php
-    if(isset($this->session->nombre)){
-        echo $this->session->nombre;
-    }
-    ?>! Bienvenid@
-</h2>
+<h2>Gatos</h2>
 <section>
     <h3>Añade un nuevo gato</h3>
     <form action="<?= base_url("index.php/gatos/insertar_gato");?>" method="post" enctype="multipart/form-data">
@@ -64,5 +58,3 @@
         </tbody>
     </table>
 </section>
-<form method='post' action='<?= base_url("index.php/gatos/desconectar");?>'>
-<input type='submit'  value='Desconectar' name='desconectar'/> 

@@ -1,3 +1,4 @@
+<?php if(isset($this->session->tipo_usuario )){ ?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -9,7 +10,7 @@
         <link rel="stylesheet" href=<?= base_url("/assets/css/normalize.css");?>>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
         <link rel="stylesheet" href=<?= base_url("/assets/css/main.css");?>>
-        <script src="<?= base_url("assets/js/main.js");?>" defer></script>
+        <!-- <script src="<?= base_url("assets/js/main.js");?>" defer></script> -->
         <title>Administrador</title>
     </head>
     <body class="bo-page">
@@ -28,3 +29,7 @@
         </div>
     </body>
 </html>
+<?php } else { 
+ redirect( base_url('index.php/inicio/index')); 
+
+} ?>

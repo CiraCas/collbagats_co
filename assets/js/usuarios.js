@@ -1,4 +1,4 @@
-/* function validaContraseña(){
+function validaContraseña(){
     if(validaPassword() == false){
         return false;
     }
@@ -27,6 +27,8 @@ function validaPassword(){
     }
     span.innerHTML=""; 
 }
+let inputPassword2 = document.forms["formulario"]["password2"];
+inputPassword2.addEventListener("mouseleave",validaRepeticion,false);
 function validaRepeticion(){
     let formulario = document.forms["formulario"];
     let password = formulario["password"].value;
@@ -37,4 +39,4 @@ function validaRepeticion(){
         return false
     }
     span.innerHTML="";
-} */
+}
