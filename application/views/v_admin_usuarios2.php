@@ -26,19 +26,7 @@
         <button>Cambiar</button>
     </form>
 </section>
-<!-- <section>
-    <h3>Cambia tu contraseña</h3>
-    <form class="formulario" name="formulario" method='post' action='<?= base_url("index.php/usuarios/cambiar_password");?>' onsubmit="return validaContraseña();">
-        <label>Nueva Contraseña</label>
-        <input class="input-text" type="password" name="password">
-        <span id="msgpassword"></span>
-        <label>Repite la nueva contraseña</label>
-        <input class="input-text" type="password" name="password2">
-        <span id="msgpassword2"></span>
-        <button>Cambiar</button>
-    </form>
-</section>
- -->
+
 
 
 <!-- javaScript -->

@@ -8,23 +8,24 @@
             foreach( $usuarios as $usuario ): 
     ?>
         <h3>Modificar usuario</h3>
-        <form action="<?= base_url("index.php/usuarios/modificar_usuario");?>" method="post" >
+        <form name="formulario" action="<?= base_url("index.php/usuarios/modificar_usuario");?>" method="post" onsubmit="return validaCampos();">
             <label>Nombre*</label>
-            <input type="text" name="nombre" id="nombre" value= <?=$usuario['nombre']?>>
+            <input type="text" name="nombre" id="nombre" value= <?=$usuario['nombre']?> required>
 
             <label>Primer apellido*</label>
-            <input type="text" name="apellido1" id="apellido1" value= <?=$usuario['apellido1']?>>
+            <input type="text" name="apellido1" id="apellido1" value= <?=$usuario['apellido1']?> required>
 
             <label>Segundo apellido</label>
             <input type="text" name="apellido2" id="apellido2" value= <?=$usuario['apellido2']?>>
             <label>Email*</label>
-            <input type="email" name="mail" id="mail" value= <?=$usuario['mail']?>>
+            <input type="email" name="mail" id="mail" value= <?=$usuario['mail']?> required>
+            <span id="msgemail"></span>
             <?php if($usuario['mail'] == $this->session->email){?>
-                <label>Contraseña</label>
-                <input type="password" name="password" value= <?=$usuario['contrasenia']?>>
+                <label>Contraseña*</label>
+                <input type="password" name="password" value= <?=$usuario['contrasenia']?> required>
                 <span id="msgpassword"></span>
-                <label>Repite la contraseña</label>
-                <input type="password" name="password2" value= <?=$usuario['contrasenia']?>>
+                <label>Repite la contraseña*</label>
+                <input type="password" name="password2" value= <?=$usuario['contrasenia']?> required>
                 <span id="msgpassword2"></span>
             <?php } ?>
 
@@ -44,7 +45,7 @@
             </fieldset>
             <p>*Campos obligatorios</p>
             
-            <button type="submit">Actualizar</button>
+            <button>Actualizar</button>
         </form>
 
             <?php endforeach; 
@@ -53,3 +54,6 @@
                 }
     ?>
 </section>
+
+<!-- javaScript -->
+<script src="<?= base_url("assets/js/modificar_usu.js");?>"></script>

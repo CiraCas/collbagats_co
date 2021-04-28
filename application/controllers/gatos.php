@@ -23,18 +23,11 @@
 
         }
 
-        public function insertar_gatos(){
-
-        }
        
         public function insertar_gato(){
             $nombre= $this->input->post('nombre');
             $genero= $this->input->post('genero');
-            $descripcion= $this->input->post('descripcion');if($nombre == ''){
-                $this-> gato('Error nombre');
-
-                $comprobacion = false;
-            }
+            $descripcion= $this->input->post('descripcion');
 
             $comprobacion = true;
             $mensaje_error = '';
@@ -43,6 +36,8 @@
 
                 $comprobacion = false;
                 $mensaje_error = 'Peta nombre';
+                redirect( base_url('index.php/gatos/gato/'.$mensaje_error));
+                
             }
             if($genero == ''){
                 $this-> gato('Error nombre');

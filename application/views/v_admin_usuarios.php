@@ -1,18 +1,19 @@
 <h2>Usuarios</h2>
 <section>
     <h3>Añadir usuario</h3>
-    <form action="<?= base_url("index.php/usuarios/insertar_usuario");?>" method="post" >
+    <form  name="formulario" action="<?= base_url("index.php/usuarios/insertar_usuario");?>" method="post" onsubmit="return validaCampos();" >
         <label>Nombre*</label>
-        <input type="text" name="nombre" id="nombre">
+        <input type="text" name="nombre" id="nombre" required>
 
         <label>Primer apellido*</label>
-        <input type="text" name="apellido1" id="apellido1">
+        <input type="text" name="apellido1" id="apellido1" required>
 
         <label>Segundo apellido</label>
         <input type="text" name="apellido2" id="apellido2">
 
         <label>Email*</label>
-        <input type="email" name="mail" id="mail">
+        <input type="email" name="mail" id="mail" required>
+        <span id="msgemail"></span>
 
         <div></div>
         <fieldset>
@@ -24,7 +25,7 @@
         </fieldset>
         <p>*Campos obligatorios</p>
         <p>La contraseña se asigna automáticamente como 212223. El usuario deberá cambiarla en su primera conexión.</p>
-        <button type="submit">Agregar</button>
+        <button>Agregar</button>
     </form>
 </section>
 <section>
@@ -68,19 +69,7 @@
         </tbody>
     </table> 
 </section>
-<!-- <section>
-    <h3>Cambia tu contraseña</h3>
-    <form class="formulario" name="formulario" method='post' action='<?= base_url("index.php/usuarios/cambiar_password");?>' onsubmit="return validaContraseña();">
-        <label>Nueva Contraseña</label>
-        <input class="input-text" type="password" name="password">
-        <span id="msgpassword"></span>
-        <label>Repite la nueva contraseña</label>
-        <input class="input-text" type="password" name="password2">
-        <span id="msgpassword2"></span>
-        <button>Cambiar</button>
-    </form>
-</section>
- -->
+
 
 <!-- javaScript -->
-<script src="<?= base_url("assets/js/usuarios.js");?>" defer></script>
+<script src="<?= base_url("assets/js/nuevo_usu.js");?>" defer></script>

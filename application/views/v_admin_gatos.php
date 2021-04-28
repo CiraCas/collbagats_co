@@ -3,12 +3,12 @@
     <h3>Añade un nuevo gato</h3>
     <form action="<?= base_url("index.php/gatos/insertar_gato");?>" method="post" enctype="multipart/form-data">
         <label>Nombre</label>
-        <input type="text" name="nombre" id="nombre">
+        <input type="text" name="nombre" id="nombre" required>
         <div></div>
         <fieldset>
             <legend>Sexo</legend>
             <label>Macho</label>
-            <input type="radio" name="genero" value= "M" > <br>
+            <input type="radio" name="genero" value= "M" checked> <br>
             <label>Hembra</label>
             <input type="radio" name="genero" value= "H" > <br>
         </fieldset>

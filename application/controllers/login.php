@@ -21,6 +21,11 @@ class Login extends CI_Controller {
 		$this->load->view('v_login', $datos);
 	}
 
+    public function password(){
+        $datos['titulo'] = 'Cambio Password';
+        $this->load->view('v_password', $datos);
+    }
+
    
     public function validar() {
         $email= $this->input->post('email');
@@ -39,12 +44,23 @@ class Login extends CI_Controller {
                 $this->session->apellido1 = $respuesta["apellido1"];
                 $this->session->apellido2 = $respuesta["apellido2"];
                 $this->session->idusuario = $respuesta["idusuario"];
-                redirect( base_url('index.php/gatos/gato') );
+                if( $password != '212223'){
+                    redirect( base_url('index.php/gatos/gato') );
+                } else {
+                    redirect( base_url('index.php/login/password'));
+                }
             } 
             
         } else {
             redirect( base_url('index.php/login/login_v/error') );
         }
+    }
+
+    public function cambiar_password(){
+        $new_password= $this->input->post('password');        
+        $this->m_usuarios->cambiar_password($new_password);
+        redirect( base_url('index.php/gatos/gato') );
+        
     }
 }
 
