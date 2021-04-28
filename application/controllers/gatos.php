@@ -27,7 +27,6 @@
         public function insertar_gato(){
             $nombre= $this->input->post('nombre');
             $genero= $this->input->post('genero');
-            $descripcion= $this->input->post('descripcion');
 
             $comprobacion = true;
             $mensaje_error = '';
@@ -47,7 +46,10 @@
 
             if($comprobacion) {
                 $respuesta = $this->grabar_imagen();
+                $this->m_gatos->insertar_gato($respuesta);
+                redirect( base_url('index.php/gatos/gato'));
             }
+
             
         }
 
@@ -76,6 +78,22 @@
                 
                 return $nombre_foto;
             }
+        }
+
+        function borrar_gato($idgato) {   
+            $gato = $this -> m_gatos -> select_gatos_id($idgato);
+            var_dump($gato[0]["imagen"]);
+            $imagen = $gato[0]["imagen"];
+            if($gato[0]["imagen"] != '0'){
+                unlink("./subidas/gatos/" . $imagen);
+                $this -> m_gatos -> borrar_gato($idgato);
+
+            } else {
+                $this -> m_gatos -> borrar_gato($idgato);
+            }
+            redirect( base_url('index.php/gatos/gato'));
+
+
         }
 
     }

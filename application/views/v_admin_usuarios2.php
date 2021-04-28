@@ -1,7 +1,8 @@
 <h2>Usuario</h2>
 <section>
     <h3>Modificar usuario</h3>
-    <form name="formulario" method='post' action='<?= base_url("index.php/usuarios/cambiar_password");?>' onsubmit="return validaCampos();">
+    <form name="formulario" method='post' action='<?= base_url("index.php/usuarios/modificar_usuario");?>' onsubmit="return validaCampos();">
+        <input type="hidden" name="idusuario" value="<?= $this->session->idusuario ?>">
         <label>Nombre*</label>
         <input type="text" name="nombre" id="nombre" value='<?= $this->session->nombre ?>'>
 
@@ -13,7 +14,10 @@
 
         <label>Email*</label>
         <input type="email" name="mail" id="mail" value='<?= $this->session->email ?>'>
-        
+        <span id="msgemail"></span>
+
+        <input type="hidden" name="permisos" value= 2>
+
         <label>Contraseña</label>
         <input type="password" name="password" value='<?= $this->session->password ?>'>
         <span id="msgpassword"></span>
@@ -28,6 +32,5 @@
 </section>
 
 
-
 <!-- javaScript -->
-<script src="<?= base_url("assets/js/usuarios.js");?>" defer></script>
+<script src="<?= base_url("assets/js/modificar_usu.js");?>"></script>

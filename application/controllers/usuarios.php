@@ -29,14 +29,6 @@
 
         }
 
-/*         public function tablaUsuarios() {
-            $this->table->set_heading('Emal', 'Nombre', 'Apellido1', 'Apellido2', 'contraseña','Permisos');
-            //$usuarios = $this->db->query('SELECT * FROM usuarios');
-            $usuarios = $this->m_usuarios->select_usuarios();
-            $tabla = $this->table->generate($usuarios);
-            var_dump($tabla);
-            
-        } */
  
         public function cambiar_password(){
             $new_password= $this->input->post('password');        
@@ -45,14 +37,25 @@
             
         }
         public function borrar_usu(){
-            
-
-            $this->m_usuarios->borrar_usuario($this->input->post('mail'));
+            $this->m_usuarios->borrar_usuario($this->input->post('idusuario'));
             //$this-> usuario();
             redirect(base_url("index.php/usuarios/usuario"), 'refresh');
         }
+
         public function insertar_usuario() {
             $this->m_usuarios->insert_usuario();
+            redirect(base_url("index.php/usuarios/usuario"), 'refresh');
+        }
+
+        public function modificar_usuario() {
+            $this->m_usuarios->modificar_usuario($this->input->post('idusuario'));
+            if($this->input->post('idusuario') == $this->session->idusuario) {
+                $this->session->email = $this->input->post('mail');
+                $this->session->password = $this->input->post('password');
+                $this->session->nombre = $this->input->post('nombre');
+                $this->session->apellido1 = $this->input->post('apellido1');
+                $this->session->apellido2 = $this->input->post('apellido2');
+            }
             redirect(base_url("index.php/usuarios/usuario"), 'refresh');
         }
 

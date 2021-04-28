@@ -1,4 +1,4 @@
-function validaCogin(){
+function validaCampos(){
     if(validaEmail() == false){
         return false;
     }

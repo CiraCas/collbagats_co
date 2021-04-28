@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class m_gatos extends CI_Model {
-    function select_gatos(){
+    function select_gatos() {
         $this->db->select("*");
         $this->db->from("gatos");
         $this->db->join("adopciones", "gatos.idgato=adopciones.idgato2", "left outer");
@@ -14,13 +14,29 @@ class m_gatos extends CI_Model {
             return NULL;
         }
     }
-
-    function insert_gato(){
-        $nombre= $this->input->post('nombre');
-        $genero= $this->input->post('genero');
-        $descripcion= $this->input->post('descripcion');
+    function select_gatos_id($idgato) {
+        $this->db->select("*");
+        $this->db->from("gatos");
+        $this->db->where("idgato" , $idgato);
+        $query=$this->db->get();
+        
+        if($query->num_rows()>0){
+            return $query->result_array();
+        }else{
+            return NULL;
+        } 
     }
-    function modificar_gatos($nombre_fichero = '', $idGato){
+
+    function insertar_gato($imagen) {
+        $array=array(
+            "nombre" => $this->input->post('nombre'),
+            "sexo"=>$this->input->post('genero'),
+            "descripcion"=>$this->input->post('descripcion'),
+            "imagen"=> $imagen 
+        );
+        $this->db->insert("gatos",$array);
+    }
+    function modificar_gatos($nombre_fichero = '', $idGato) {
         $data['nombre'] = $this->input->post('nombre');
         $data['genero']= $this->input->post('genero');
         $data['descripcion']= $this->input->post('descripcion');
@@ -31,6 +47,11 @@ class m_gatos extends CI_Model {
         $this->db->where('idGato', $idGato);
         $this->db->update('gatos', $data);
 
+    }
+
+    function borrar_gato($idgato) {
+        $this->db->where('idgato', $idgato);
+        $this->db->delete('gatos');
     }
 }
 ?>

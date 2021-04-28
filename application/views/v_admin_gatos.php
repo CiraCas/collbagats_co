@@ -25,6 +25,7 @@
         <thead>
             <tr>
                 <th>id</th>
+                <th>Foto</th>    
                 <th>Nombre</th>
                 <th>Sexo</th>
                 <th>Descripción</th>
@@ -39,12 +40,24 @@
             ?>
                     <tr>
                         <td><?=$gato['idgato']?></td>
+                        <td> 
+                        <?php if( $gato['imagen'] != '0') { 
+                        ?>
+                            <img src="<?= base_url("subidas/gatos/" . $gato['imagen'])?> " alt="gato"></td>
+                        <?php } else { 
+                        ?>
+                             <img src="<?= base_url("subidas/gatos/sombra.png")?> " alt="gato"></td>
+                        <?php } ?>
                         <td><?=$gato['nombre']?></td>
                         <td><?=$gato['sexo']?></td>
                         <td><?=$gato['descripcion']?></td>
                         <td class= "casilla-iconos">
+                        <a href="<?= base_url("index.php/gatos/borrar_gato/". $gato['idgato']);?>">
                             <i class="fas fa-trash-alt icon-admin"></i>
+                        </a>
+                        <a href="#">
                             <i class="fas fa-edit"></i>
+                        </a>
                         </td>
 
                     </tr>

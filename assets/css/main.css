@@ -238,4 +238,6 @@ ul{
 .tabla-admin {
   background-color: var(--primario);
 }
-
+.tabla-admin img {
+  max-width: 150px;
+}

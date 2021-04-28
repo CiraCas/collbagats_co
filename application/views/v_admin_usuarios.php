@@ -48,9 +48,9 @@
                     <td><?=$usu['apellido2']?></td>
                     <td><?=$usu['tipo_usuario']?></td>
                     <td class= "casilla-iconos">
-                        <?php if($usu['mail'] != $this->session->email) { ?>
+                        <?php if($usu['idusuario'] != $this->session->idusuario) { ?>
                             <form method='post' action="<?= base_url("index.php/usuarios/borrar_usu");?>">
-                                <input type="hidden" name="mail" value="<?=$usu['mail']?>">
+                                <input type="hidden" name="idusuario" value="<?=$usu['idusuario']?>">
                                 <button type="submit">
                                     <i class="fas fa-trash-alt icon-admin"></i>
                                 </button>

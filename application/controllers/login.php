@@ -59,6 +59,7 @@ class Login extends CI_Controller {
     public function cambiar_password(){
         $new_password= $this->input->post('password');        
         $this->m_usuarios->cambiar_password($new_password);
+        $this->session->password = $new_password;
         redirect( base_url('index.php/gatos/gato') );
         
     }

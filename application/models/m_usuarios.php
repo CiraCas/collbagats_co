@@ -55,9 +55,24 @@ class m_usuarios extends CI_Model {
         $this->db->update('usuarios');
     }
     
-    function borrar_usuario($mail){
-        $this->db->where('mail', $mail);
+    function borrar_usuario($idusuario){
+        $this->db->where('idusuario', $idusuario);
         $this->db->delete('usuarios');
+    }
+    
+    function modificar_usuario($idusuario){
+        $data=array(
+            "mail" => $this->input->post('mail'),
+            "nombre" => $this->input->post('nombre'),
+            "apellido1" => $this->input->post('apellido1'),
+            "apellido2" => $this->input->post('apellido2'),
+            "tipo_usuario" => $this->input->post('permisos'),
+            "contrasenia" => $this->input->post('password')
+        ); 
+        $this->db->set($data);
+        $this->db->where('idusuario', $idusuario);
+        
+        $this->db->update("usuarios");
     }
 
 }
