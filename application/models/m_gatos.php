@@ -36,15 +36,16 @@ class m_gatos extends CI_Model {
         );
         $this->db->insert("gatos",$array);
     }
-    function modificar_gatos($nombre_fichero = '', $idGato) {
+    function modificar_gato($nombre_fichero = '') {
+        $idgato= $this->input->post('idgato');
         $data['nombre'] = $this->input->post('nombre');
-        $data['genero']= $this->input->post('genero');
+        $data['sexo']= $this->input->post('genero');
         $data['descripcion']= $this->input->post('descripcion');
 
         if($nombre_fichero != '')
             $data['imagen'] = $nombre_fichero;
 
-        $this->db->where('idGato', $idGato);
+        $this->db->where('idgato', $idgato);
         $this->db->update('gatos', $data);
 
     }

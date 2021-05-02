@@ -8,13 +8,27 @@
             $this->load->model('m_gatos');
         
         }
-        public function gato($error = '') {
+        public function gato($error = '', $error2 = '') {
+            if(isset($error) && $error != '')
+            $data['error'] = 'Debes introducir un nombre';
+            if(isset($error2) && $error2 != '')
+            $data['error'] = 'Debes seleccionar un género';
+
             $data['gatos'] = $this->m_gatos->select_gatos();
             $data['admin_contenido'] = 'v_admin_gatos';
             $data['activa'] = 'gatos';
-            $data['error'] = $error;
+            //$data['error'] = $error;
 
             $this->load->view('v_adminmain', $data); 
+        }
+
+        public function gato2($gato) {
+      
+            $data['gatos'] = $this->m_gatos->select_gatos_id($gato);
+            $data['admin_contenido'] = 'v_admin_gatos_m';
+            $data['activa'] = 'gatos';
+        
+            $this->load->view('v_adminmain', $data);
         }
         
         public function desconectar () {
@@ -31,15 +45,17 @@
             $comprobacion = true;
             $mensaje_error = '';
             if($nombre == ''){
-                $this-> gato('Error nombre');
+                //$this-> gato('Error nombre');
 
                 $comprobacion = false;
-                $mensaje_error = 'Peta nombre';
-                redirect( base_url('index.php/gatos/gato/'.$mensaje_error));
+                //$mensaje_error = 'Debes introducir un nombre';
+                redirect( base_url('index.php/gatos/gato/error'));
                 
             }
             if($genero == ''){
-                $this-> gato('Error nombre');
+                //$this-> gato('Error genero');
+                //$mensaje_error = 'Debes seleccionar un género';
+                redirect( base_url('index.php/gatos/gato/error2'));
 
                 $comprobacion = false;
             }
@@ -47,6 +63,23 @@
             if($comprobacion) {
                 $respuesta = $this->grabar_imagen();
                 $this->m_gatos->insertar_gato($respuesta);
+                redirect( base_url('index.php/gatos/gato'));
+            }
+
+            
+        }
+        public function modificar_gato(){
+            $new_imagen = $this->input->post('file');
+            $imagen = $this->input->post('imagen');
+
+            if(isset($new_imagen)) {
+                //$respuesta = $this->grabar_imagen();
+                $this->m_gatos->modificar_gato($imagen);
+                redirect( base_url('index.php/gatos/gato'));
+            }else{
+                unlink("./subidas/gatos/" . $imagen);
+                $respuesta = $this->grabar_imagen();
+                $this->m_gatos->modificar_gato($respuesta);
                 redirect( base_url('index.php/gatos/gato'));
             }
 

@@ -3,7 +3,7 @@
         <img class="logo" src=<?= base_url("assets/img/logo.png");?> alt="logo">
     </div>
     <section class="menu-navigation">
-        <h2>Hola
+        <h3>Hola
         <?php
         if(isset($this->session->nombre)){
             echo $this->session->nombre;
@@ -12,7 +12,7 @@
         <form method='post' action='<?= base_url("index.php/gatos/desconectar");?>'>
         <input type='submit'  value='Desconectar' name='desconectar'/>
         </form>
-        </h2>
+        </h3>
         
         <nav >
             <div></div>
@@ -21,10 +21,10 @@
                     <a href="<?= base_url("index.php/gatos/gato");?>">Gatos</a>
                 </li>
                 <li class="menu-list-item <?php if($activa == 'adopciones') echo 'activa';?>">
-                    <a href="#">Adopciones</a>
+                    <a href="<?= base_url("index.php/adopciones/adopcion");?>">Adopciones</a>
                 </li>
                 <li class="menu-list-item <?php if($activa == 'noticias') echo 'activa';?>">
-                    <a href="#">Noticias</a>
+                    <a href="<?= base_url("index.php/noticias/noticia");?>">Noticias</a>
                 </li>
                 <li class="menu-list-item <?php if($activa == 'usuarios') echo 'activa';?>">
                     <a href="<?= base_url("index.php/usuarios/usuario");?>">Usuarios</a>

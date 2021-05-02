@@ -16,11 +16,14 @@
         <textarea type="text" name="descripcion" id="descripcion"></textarea><br>
         <label>Selecciona Imagen</label>
         <input type="file" name="file" id="file" accept=".jpg, .png, .gif, .jpeg"> <br>
-        <div class="error_modal"><?= $error;?></div>
+        <?php if(isset($error)) { ?>
+            <div class="error_modal"><?= $error;?></div>
+        <?php } ?>
         <button type="submit">Agregar</button>
     </form>
 </section>
 <section>
+    <h3>Gatos en adopción</h3>
     <table id="table_id" class="display tabla-admin" border='1'>
         <thead>
             <tr>
@@ -55,7 +58,7 @@
                         <a href="<?= base_url("index.php/gatos/borrar_gato/". $gato['idgato']);?>">
                             <i class="fas fa-trash-alt icon-admin"></i>
                         </a>
-                        <a href="#">
+                        <a href="<?= base_url("index.php/gatos/gato2/". $gato['idgato']);?>">
                             <i class="fas fa-edit"></i>
                         </a>
                         </td>

@@ -23,11 +23,7 @@
             $data['activa'] = 'usuarios';
             $this->load->view('v_adminmain', $data);
         }
-        public function desconectar () {
-            session_destroy( );
-            redirect( base_url('index.php/inicio/index') );
 
-        }
 
  
         public function cambiar_password(){
