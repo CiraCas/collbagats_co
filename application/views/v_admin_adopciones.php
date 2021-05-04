@@ -1,19 +1,10 @@
 <section>
-    <h3>Selecciona adoptante o introduce nuevo adoptante</h3>
-    <select >
-        <option value=""></option>
-        <option value="46784078P">46784078P</option>
-        <option value="74589563I">74589563I</option>
-    </select>
-    
-</section>
-<section>
     <h3>Gatos en adopción</h3>
     <table id="table_id" class="display tabla-admin" border='1'>
         <thead>
             <tr>
                 <th>id</th>
-                <th>Foto</th>    
+                <th>Selecciona gato</th>    
                 <th>Nombre</th>
                 <th>Sexo</th>
                 <th>Descripción</th>
@@ -29,14 +20,15 @@
             ?>
                     <tr>
                         <td><?=$gato['idgato']?></td>
-                        <td> 
+                        <td> <a href="<?= base_url("index.php/adopciones/adopcion2/". $gato['idgato']);?>">
                             <?php if( $gato['imagen'] != '0') { 
                             ?>
-                                <img src="<?= base_url("subidas/gatos/" . $gato['imagen'])?> " alt="gato"></td>
+                                <img src="<?= base_url("subidas/gatos/" . $gato['imagen'])?> " alt="gato">
                             <?php } else { 
                             ?>
-                                <img src="<?= base_url("subidas/gatos/sombra.png")?> " alt="gato"></td>
+                                <img src="<?= base_url("subidas/gatos/sombra.png")?> " alt="gato">
                             <?php } ?>
+                        </a></td>
                         <td><?=$gato['nombre']?></td>
                         <td><?=$gato['sexo']?></td>
                         <td><?=$gato['descripcion']?></td>
