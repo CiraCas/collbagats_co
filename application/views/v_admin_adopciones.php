@@ -49,3 +49,48 @@
         </tbody>
     </table>
 </section>
+<section>
+<h3>Adoptantes</h3>
+<table id="tabla-adoptantes" class="display tabla-admin" border='1'>
+        <thead>
+            <tr>
+                <th>DNI</th>
+                <th>Nombre</th>    
+                <th>Primer Apellido</th>
+                <th>Segundo Apellido</th>
+                <th></th>
+               
+
+            </tr>
+        </thead>   
+        <tbody>
+            <?php 
+                if($adoptantes != NULL) {
+                    
+                    foreach( $adoptantes as $adoptante ): 
+            ?>
+                    <tr>
+                        <td><?= $adoptante['dni']?></td>
+                        <td><?= $adoptante['nombre']?></td>
+                        <td><?=$adoptante['apellido1']?></td>
+                        <td><?=$adoptante['apellido2']?></td>
+                        <td class= "casilla-iconos">
+                            <a href="<?= base_url("index.php/adopciones/borrar_adoptante/". $adoptante['dni']);?>">
+                                <i class="fas fa-trash-alt icon-admin"></i>
+                            </a>
+                            <a href="<?= base_url("index.php/adopciones/adoptante/". $adoptante['dni']);?>">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td> 
+
+                    </tr>
+                <?php endforeach; 
+            }else{
+                echo "No hay adoptantes en la base de datos";
+            }
+            ?>
+            
+
+        </tbody>
+    </table>
+</section>
