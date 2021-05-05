@@ -16,6 +16,19 @@ class m_adopciones extends CI_Model {
        
     }
 
+    function select_adopcion() {
+        $this->db->select("*");
+        $this->db->from("adopciones");
+        $this->db->join("gatos", "adopciones.idgato2=gatos.idgato", "inner");
+        $query=$this->db->get();
+        
+        if($query->num_rows()>0){
+            return $query->result_array();
+        }else{
+            return NULL;
+        } 
+    }
+
     function delete_adoptante($dni) {
         $this->db->where('dni', $dni);
         $this->db->delete('adoptante');
@@ -55,6 +68,17 @@ class m_adopciones extends CI_Model {
             "apellido2"=> $this->input->post('apellido2') 
         );
         $this->db->insert('adoptante', $array);
+    }
+
+    function insertar_adopcion($fecha, $foto) {
+        $array=array(
+            "nuevonombre" => $this->input->post('nuevonombre'),
+            "idgato2"=>$this->input->post('idgato'),
+            "dniadoptante"=>$this->input->post('adoptante'),
+            "fecha"=>$fecha,
+            "foto"=> $foto
+        );
+        $this->db->insert("adopciones",$array);
     }
 }
 ?>

@@ -12,10 +12,11 @@ class Login extends CI_Controller {
 
 	public function login_v($error = '', $error2 = '') {
         $datos['titulo'] = 'Login de entrada';
-
-        if(isset($error) && $error != '')
+        if($error == 1)
+        //if(isset($error) && $error != '')
             $datos['error'] = 'No existe el email en nuestra bd';
-        if(isset($error2) && $error2 != '')
+        //if(isset($error2) && $error2 != '')
+        if($error == 2)
             $datos['error'] = 'Los datos no coinciden';
 
 		$this->load->view('v_login', $datos);
@@ -35,7 +36,7 @@ class Login extends CI_Controller {
 
         if($respuesta != NULL) {
             if($respuesta["contrasenia"] != $password) {
-                redirect( base_url('index.php/login/login_v/error2') );
+                redirect( base_url('index.php/login/login_v/2') );
             } else {
                 $this->session->email = $email;
                 $this->session->password = $password;
@@ -52,7 +53,7 @@ class Login extends CI_Controller {
             } 
             
         } else {
-            redirect( base_url('index.php/login/login_v/error') );
+            redirect( base_url('index.php/login/login_v/1') );
         }
     }
 

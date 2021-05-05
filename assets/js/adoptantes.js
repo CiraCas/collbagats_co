@@ -5,8 +5,8 @@ function validaAdoptante(){
     return true;
 }
 
-let inputPassword = document.forms["formulario"]["dni"];
-inputPassword.addEventListener("blur", nif, false);
+let inputDni = document.forms["formulario"]["dni"];
+inputDni.addEventListener("blur", nif, false);
 
 function nif() {
     let formulario = document.forms["formulario"];

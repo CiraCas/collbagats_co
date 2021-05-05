@@ -50,6 +50,54 @@
     </table>
 </section>
 <section>
+<h3>Adopciones</h3>
+<table id="tabla-adopciones" class="display tabla-admin" border='1'>
+        <thead>
+            <tr>
+                <th>Adopción</th>
+                <th>Foto</th>    
+                <th>Nombre</th>
+                <th>Antiguo nombre</th>
+                <th>Fecha</th>
+                <th>Adoptante</th>
+               
+
+            </tr>
+        </thead>   
+        <tbody>
+            <?php 
+                if($adopciones != NULL) {
+                    
+                    foreach( $adopciones as $adopcion ): 
+            ?>
+                    <tr>
+                        <td><?= $adopcion['idadopcion']?></td>
+                        <td><?= $adopcion['foto']?></td>
+                        <td><?=$adopcion['nuevonombre']?></td>
+                        <td><?=$adopcion['nombre']?></td>
+                        <td><?=$adopcion['fecha']?></td>
+                        <td><?=$adopcion['dniadoptante']?></td>
+                        <td class= "casilla-iconos">
+                            <a href="<?= base_url("index.php/adopciones/borrar_adoptante/". $adopcion['idadopcion']);?>">
+                                <i class="fas fa-trash-alt icon-admin"></i>
+                            </a>
+                            <a href="<?= base_url("index.php/adopciones/adoptante/". $adopcion['idadopcion']);?>">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td> 
+
+                    </tr>
+                <?php endforeach; 
+            }else{
+                echo "No hay adopciones en la base de datos";
+            }
+            ?>
+            
+
+        </tbody>
+    </table>
+</section>
+<section>
 <h3>Adoptantes</h3>
 <table id="tabla-adoptantes" class="display tabla-admin" border='1'>
         <thead>

@@ -43,7 +43,7 @@
             $genero= $this->input->post('genero');
 
             $comprobacion = true;
-            $mensaje_error = '';
+            //$mensaje_error = '';
             if($nombre == ''){
                 //$this-> gato('Error nombre');
 

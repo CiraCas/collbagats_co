@@ -1,13 +1,12 @@
 <section>
-    <h2>Usuarios</h2>
-        
-
+    <h2>Adoptantes</h2>
+    <h3>Modificar usuario</h3>
     <?php 
         if($adoptantes != NULL) {
                         
             foreach( $adoptantes as $adoptante ): 
     ?>
-        <h3>Modificar usuario</h3>
+       
         <form name="formulario" action="<?= base_url("index.php/adopciones/modificar_adoptante");?>" method="post" onsubmit="return  validaAdoptante();">
             <input type="hidden" name="dni1" value="<?=$adoptante['dni']?>">
             <label>DNI*</label>
