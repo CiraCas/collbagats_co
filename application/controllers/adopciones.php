@@ -29,6 +29,14 @@
             $this->load->view('v_adminmain', $data); 
              
         }
+        public function adopcion3($idadopcion) {
+            
+            $data['adopciones'] = $this->m_adopciones->select_adopcion_id($idadopcion);
+            $data['admin_contenido'] = 'v_admin_adopciones_m';
+            $data['activa'] = 'adopciones';
+            $this->load->view('v_adminmain', $data); 
+             
+        }
 
         public function adoptante($dni) {
 
@@ -92,6 +100,9 @@
                 
                 return $nombre_foto;
             }
+        }
+        public function modificar_adopcion () {
+
         }
     }
 ?>

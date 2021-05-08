@@ -1,6 +1,33 @@
 <section>
-    <h3>Gatos en adopción</h3>
-    <table id="table_id" class="display tabla-admin" border='1'>
+    <h2>Selecciona gato para la adopcion</h2>
+    <?php 
+                if($gatos != NULL) {
+                    
+                    foreach( $gatos as $gato ): 
+            ?>
+                        <h3><?=$gato['idgato']?>. <?=$gato['nombre']?></h3>
+                        <a href="<?= base_url("index.php/adopciones/adopcion2/". $gato['idgato']);?>">
+                            <?php if( $gato['imagen'] != '0') { 
+                            ?>
+                                <img src="<?= base_url("subidas/gatos/" . $gato['imagen'])?> " alt="gato">
+                            <?php } else { 
+                            ?>
+                                <img src="<?= base_url("subidas/gatos/sombra.png")?> " alt="gato">
+                            <?php } ?>
+                        </a>
+                        <?php  if($gato['sexo'] != 'M') {?>
+                            <i class="fas fa-venus"></i>
+                        <?php } else { ?>
+                            <i class="fas fa-mars"></i>
+                        <?php } ?>
+
+                        <div><?=$gato['descripcion']?></div>
+                <?php endforeach; 
+            }else{
+                echo "No hay gatos en adopción en estos momentos";
+            }
+            ?>
+    <!-- <table id="table_id" class="display tabla-admin" border='1'>
         <thead>
             <tr>
                 <th>id</th>
@@ -8,7 +35,7 @@
                 <th>Nombre</th>
                 <th>Sexo</th>
                 <th>Descripción</th>
-                <!-- <th>Selecciona</th> -->
+                <!-- <th>Selecciona</th>
 
             </tr>
         </thead>   
@@ -36,7 +63,7 @@
                         <a href="<?= base_url("index.php/adopciones/adopcion/". $gato['idgato']);?>">
                             <i class="fas fa-paw"></i>
                         </a>
-                        </td> -->
+                        </td> 
 
                     </tr>
                 <?php endforeach; 
@@ -47,7 +74,7 @@
             
 
         </tbody>
-    </table>
+    </table> -->
 </section>
 <section>
 <h3>Adopciones</h3>
@@ -78,10 +105,10 @@
                         <td><?=$adopcion['fecha']?></td>
                         <td><?=$adopcion['dniadoptante']?></td>
                         <td class= "casilla-iconos">
-                            <a href="<?= base_url("index.php/adopciones/borrar_adoptante/". $adopcion['idadopcion']);?>">
+                            <a href="<?= base_url("index.php/adopciones/borrar_adopcion/". $adopcion['idadopcion']);?>">
                                 <i class="fas fa-trash-alt icon-admin"></i>
                             </a>
-                            <a href="<?= base_url("index.php/adopciones/adoptante/". $adopcion['idadopcion']);?>">
+                            <a href="<?= base_url("index.php/adopciones/adopcion3/". $adopcion['idadopcion']);?>">
                                 <i class="fas fa-edit"></i>
                             </a>
                         </td> 
