@@ -80,5 +80,17 @@ class m_adopciones extends CI_Model {
         );
         $this->db->insert("adopciones",$array);
     }
+    function select_adopcion_id($idadopcion) {
+        $this->db->select("*");
+        $this->db->from("adopciones");
+        $this->db->where("idadopcion", $idadopcion);
+        $query=$this->db->get();
+        
+        if($query->num_rows()>0){
+            return $query->result_array();
+        }else{
+            return NULL;
+        } 
+    }
 }
 ?>
