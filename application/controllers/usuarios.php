@@ -32,8 +32,8 @@
             $this-> usuario();
             
         }
-        public function borrar_usu(){
-            $this->m_usuarios->borrar_usuario($this->input->post('idusuario'));
+        public function borrar_usu($idusuario){
+            $this->m_usuarios->borrar_usuario($idusuario);
             //$this-> usuario();
             redirect(base_url("index.php/usuarios/usuario"), 'refresh');
         }

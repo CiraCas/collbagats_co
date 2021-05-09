@@ -49,12 +49,15 @@
                     <td><?=$usu['tipo_usuario']?></td>
                     <td class= "casilla-iconos">
                         <?php if($usu['idusuario'] != $this->session->idusuario) { ?>
-                            <form method='post' action="<?= base_url("index.php/usuarios/borrar_usu");?>">
+                            <a href="<?= base_url("index.php/usuarios/borrar_usu/". $usu['idusuario']);?>">
+                                <i class="fas fa-trash-alt icon-admin"></i>
+                            </a>
+                            <!-- <form method='post' action="<?= base_url("index.php/usuarios/borrar_usu");?>">
                                 <input type="hidden" name="idusuario" value="<?=$usu['idusuario']?>">
                                 <button type="submit">
                                     <i class="fas fa-trash-alt icon-admin"></i>
                                 </button>
-                            </form>
+                            </form> -->
                         <?php } ?>
                         <a href="<?= base_url("index.php/usuarios/usu2/". $usu['idusuario']);?>">
                             <i class="fas fa-edit"></i>

@@ -13,13 +13,13 @@
             <input type="text" name="dni" id="dni" value="<?=$adoptante['dni']?>">
             <span id="msgdni"></span>
             <label>Nombre*</label>
-            <input type="text" name="nombre" id="nombre" value= <?=$adoptante['nombre']?> required>
+            <input type="text" name="nombre" id="nombre" value= "<?=$adoptante['nombre']?>" required>
 
             <label>Primer apellido*</label>
-            <input type="text" name="apellido1" id="apellido1" value= <?=$adoptante['apellido1']?> required>
+            <input type="text" name="apellido1" id="apellido1" value= "<?=$adoptante['apellido1']?>" required>
 
             <label>Segundo apellido</label>
-            <input type="text" name="apellido2" id="apellido2" value= <?=$adoptante['apellido2']?>>
+            <input type="text" name="apellido2" id="apellido2" value= "<?=$adoptante['apellido2']?>">
 
             <p>*Campos obligatorios</p>
             

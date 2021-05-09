@@ -11,26 +11,26 @@
         <form name="formulario" action="<?= base_url("index.php/usuarios/modificar_usuario");?>" method="post" onsubmit="return validaCampos();">
             <input type="hidden" name="idusuario" value="<?=$usuario['idusuario']?>">
             <label>Nombre*</label>
-            <input type="text" name="nombre" id="nombre" value= <?=$usuario['nombre']?> required>
+            <input type="text" name="nombre" id="nombre" value= "<?=$usuario['nombre']?>" required>
 
             <label>Primer apellido*</label>
-            <input type="text" name="apellido1" id="apellido1" value= <?=$usuario['apellido1']?> required>
+            <input type="text" name="apellido1" id="apellido1" value= "<?=$usuario['apellido1']?>" required>
 
             <label>Segundo apellido</label>
-            <input type="text" name="apellido2" id="apellido2" value= <?=$usuario['apellido2']?>>
+            <input type="text" name="apellido2" id="apellido2" value= "<?=$usuario['apellido2']?>">
             <label>Email*</label>
-            <input type="email" name="mail" id="mail" value= <?=$usuario['mail']?> required>
+            <input type="email" name="mail" id="mail" value= "<?=$usuario['mail']?>" required>
             <span id="msgemail"></span>
             <?php if($usuario['mail'] == $this->session->email){?>
                 <label>Contraseña*</label>
-                <input type="password" name="password" value= <?=$usuario['contrasenia']?> required>
+                <input type="password" name="password" value= "<?=$usuario['contrasenia']?>" required>
                 <span id="msgpassword"></span>
                 <label>Repite la contraseña*</label>
-                <input type="password" name="password2" value= <?=$usuario['contrasenia']?> required>
+                <input type="password" name="password2" value= "<?=$usuario['contrasenia']?>" required>
                 <span id="msgpassword2"></span>
             <?php } else { ?>
-                <input type="hidden" name="password" value= <?=$usuario['contrasenia']?> required>
-                <input type="hidden" name="password2" value= <?=$usuario['contrasenia']?> required>
+                <input type="hidden" name="password" value= "<?=$usuario['contrasenia']?>" required>
+                <input type="hidden" name="password2" value= "<?=$usuario['contrasenia']?>" required>
             <?php } ?>
 
             <div></div>

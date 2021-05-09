@@ -8,7 +8,7 @@
                 <form action="<?= base_url("index.php/gatos/modificar_gato");?>" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="idgato" value="<?=$gato['idgato']?>">
                     <label>Nombre</label>
-                    <input type="text" name="nombre" id="nombre" value= <?=$gato['nombre']?> required>
+                    <input type="text" name="nombre" id="nombre" value= "<?=$gato['nombre']?>" required>
                     <fieldset>
                         <legend>Sexo</legend>
                         <?php if($gato['sexo'] != 'H'){?>
