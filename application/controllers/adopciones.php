@@ -63,6 +63,11 @@
 
         }
 
+        public function borrar_adopcion ($idadopcion) {
+            $this->m_adopciones->delete_adopcion($idadopcion);
+            redirect( base_url('index.php/adopciones/adopcion'));
+        }
+
         public function modificar_adoptante () {
             $this->m_adopciones->modificar_adoptante();
             redirect( base_url('index.php/adopciones/adopcion'));
@@ -90,9 +95,7 @@
             $upload= $this->upload->do_upload('file');
 
             if(!$upload){
-                $error = $this->upload->display_errors();
-
-                $message = 'Error al subir el fichero, revise el formato y el tamaño';
+               
                 return false;
                 
             }else{  
@@ -102,6 +105,23 @@
             }
         }
         public function modificar_adopcion () {
+           
+            $imagen = $this->input->post('imagen');
+            $originalDate = $this->input->post('fecha');
+            $newDate = date("Y-m-d", strtotime($originalDate));
+        
+            $respuesta = $this->grabar_imagen();
+            if($respuesta != false) {
+                unlink("./subidas/adopciones/" . $imagen);
+                $this->m_adopciones->modificar_adopcion($respuesta, $newDate);
+                redirect( base_url('index.php/adopciones/adopcion'));
+                
+            }else {
+               
+                $this->m_adopciones->modificar_adopcion($respuesta, $newDate);
+                redirect( base_url('index.php/adopciones/adopcion'));
+            }
+
 
         }
     }

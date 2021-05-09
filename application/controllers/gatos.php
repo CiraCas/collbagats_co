@@ -69,19 +69,30 @@
             
         }
         public function modificar_gato(){
-            $new_imagen = $this->input->post('file');
+           
+            //$new_imagen = $this->input->post('file');
             $imagen = $this->input->post('imagen');
 
-            if(isset($new_imagen)) {
+          /*   if(isset($new_imagen)) {
                 //$respuesta = $this->grabar_imagen();
                 $this->m_gatos->modificar_gato($imagen);
                 redirect( base_url('index.php/gatos/gato'));
-            }else{
-                unlink("./subidas/gatos/" . $imagen);
+            }else{ */
+                //unlink("./subidas/gatos/" . $imagen);
                 $respuesta = $this->grabar_imagen();
-                $this->m_gatos->modificar_gato($respuesta);
-                redirect( base_url('index.php/gatos/gato'));
-            }
+                if($respuesta != false) {
+                    unlink("./subidas/gatos/" . $imagen);
+                    $this->m_gatos->modificar_gato($respuesta);
+                    redirect( base_url('index.php/gatos/gato'));
+                    
+                }else {
+                   
+                    $this->m_gatos->modificar_gato($respuesta);
+                    redirect( base_url('index.php/gatos/gato'));
+                }
+               
+                
+            //}
 
             
         }

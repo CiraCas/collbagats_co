@@ -25,14 +25,22 @@
                     </fieldset>
                     <label>descripción</label><br>
                     <textarea type="text" name="descripcion" id="descripcion" ><?= $gato['descripcion'] ?></textarea><br>
-                    <img class= "vista" src="<?= base_url("subidas/gatos/" . $gato['imagen'])?> " alt="gato">
+
+                    <?php if( $gato['imagen'] != '0') { 
+                        ?>
+                            <img class= "vista" src="<?= base_url("subidas/gatos/" . $gato['imagen'])?> " alt="gato">
+                        <?php } else { 
+                        ?>
+                             <img class= "vista" src="<?= base_url("subidas/gatos/sombra.png")?> " alt="gato"></td>
+                        <?php } ?>
+
                     <label>Cambiar imagen</label>
                     <input type="hidden" name="imagen" value="<?=$gato['imagen']?>">
                     <input type="file" name="file" id="file" accept=".jpg, .png, .gif, .jpeg"> <br>
                     <?php if(isset($error)) { ?>
                         <div class="error_modal"><?= $error;?></div>
                     <?php } ?>
-                    <button type="submit">Agregar</button>
+                    <button type="submit">Actualizar</button>
                 </form>
             <?php endforeach; 
         }else{

@@ -33,7 +33,7 @@
             <i class="fab fa-instagram"></i>
           </a>
         </div>
-        <div>
+        <div class="iconos">
           
           <a href="mailto:collbagats@gmail.com" class="fab">collbagats@gmail.com</a>
           <a href="<?= base_url("index.php/login/login_v");?>">

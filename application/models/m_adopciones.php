@@ -33,6 +33,12 @@ class m_adopciones extends CI_Model {
         $this->db->where('dni', $dni);
         $this->db->delete('adoptante');
     }
+
+    function delete_adopcion ($idadopcion) {
+        $this->db->where('idadopcion', $idadopcion);
+        $this->db->delete('adopciones');
+    }
+
     function select_adoptante_dni($dni) {
         $this->db->select("*");
         $this->db->from("adoptante");
@@ -91,6 +97,20 @@ class m_adopciones extends CI_Model {
         }else{
             return NULL;
         } 
+    }
+
+    function modificar_adopcion($imagen = '', $fecha){
+        $idadopcion= $this->input->post('idadopcion');
+        $data['nuevonombre'] = $this->input->post('nuevonombre');
+        $data['fecha']= $fecha;
+        //$data['foto'] = $imagen;
+        if($imagen != '')
+            $data['foto'] = $imagen;
+
+        $this->db->where('idadopcion', $idadopcion);
+        $this->db->update('adopciones', $data);
+
+
     }
 }
 ?>
