@@ -8,7 +8,7 @@
             foreach( $usuarios as $usuario ): 
     ?>
         <h3>Modificar usuario</h3>
-        <form name="formulario" action="<?= base_url("index.php/usuarios/modificar_usuario");?>" method="post" onsubmit="return validaCampos();">
+        <form class="formulario-admin" name="formulario" action="<?= base_url("index.php/usuarios/modificar_usuario");?>" method="post" onsubmit="return validaCampos();">
             <input type="hidden" name="idusuario" value="<?=$usuario['idusuario']?>">
             <label>Nombre*</label>
             <input type="text" name="nombre" id="nombre" value= "<?=$usuario['nombre']?>" required>
@@ -49,7 +49,7 @@
             </fieldset>
             <p>*Campos obligatorios</p>
             
-            <button>Actualizar</button>
+            <button class="boton">Actualizar</button>
         </form>
 
             <?php endforeach; 

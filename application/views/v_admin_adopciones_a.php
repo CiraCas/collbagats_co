@@ -1,13 +1,13 @@
 <section>
     <h2>Adoptantes</h2>
-    <h3>Modificar usuario</h3>
+    <h3>Modificar adoptante</h3>
     <?php 
         if($adoptantes != NULL) {
                         
             foreach( $adoptantes as $adoptante ): 
     ?>
        
-        <form name="formulario" action="<?= base_url("index.php/adopciones/modificar_adoptante");?>" method="post" onsubmit="return  validaAdoptante();">
+        <form class="formulario-admin" name="formulario" action="<?= base_url("index.php/adopciones/modificar_adoptante");?>" method="post" onsubmit="return  validaAdoptante();">
             <input type="hidden" name="dni1" value="<?=$adoptante['dni']?>">
             <label>DNI*</label>
             <input type="text" name="dni" id="dni" value="<?=$adoptante['dni']?>">
@@ -23,7 +23,7 @@
 
             <p>*Campos obligatorios</p>
             
-            <button>Actualizar</button>
+            <button class="boton">Actualizar</button>
         </form>
 
             <?php endforeach; 

@@ -1,27 +1,32 @@
-<section>
-    <h2>Selecciona gato para la adopcion</h2>
+<h2>Selecciona gato para la adopcion</h2>
+<section class="grupos-fotos">
+    
     <?php 
                 if($gatos != NULL) {
                     
                     foreach( $gatos as $gato ): 
             ?>
-                        <h3><?=$gato['idgato']?>. <?=$gato['nombre']?></h3>
-                        <a href="<?= base_url("index.php/adopciones/adopcion2/". $gato['idgato']);?>">
-                            <?php if( $gato['imagen'] != '0') { 
-                            ?>
-                                <img src="<?= base_url("subidas/gatos/" . $gato['imagen'])?> " alt="gato">
-                            <?php } else { 
-                            ?>
-                                <img src="<?= base_url("subidas/gatos/sombra.png")?> " alt="gato">
+                    <a href="<?= base_url("index.php/adopciones/adopcion2/". $gato['idgato']);?>">
+                        <section class="grupo-foto">
+                            <h3><?=$gato['idgato']?>. <?=$gato['nombre']?></h3>
+                           <!--  <a href="<?= base_url("index.php/adopciones/adopcion2/". $gato['idgato']);?>"> -->
+                                <?php if( $gato['imagen'] != '0') { 
+                                ?>
+                                    <img src="<?= base_url("subidas/gatos/" . $gato['imagen'])?> " alt="gato">
+                                <?php } else { 
+                                ?>
+                                    <img src="<?= base_url("subidas/gatos/sombra.png")?> " alt="gato">
+                                <?php } ?>
+                            
+                            <?php  if($gato['sexo'] != 'M') {?>
+                                <i class="fas fa-venus icon-sex"></i>
+                            <?php } else { ?>
+                                <i class="fas fa-mars icon-sex"></i>
                             <?php } ?>
-                        </a>
-                        <?php  if($gato['sexo'] != 'M') {?>
-                            <i class="fas fa-venus"></i>
-                        <?php } else { ?>
-                            <i class="fas fa-mars"></i>
-                        <?php } ?>
 
-                        <div><?=$gato['descripcion']?></div>
+                            <div><?=$gato['descripcion']?></div>
+                        </section>
+                    </a>
                 <?php endforeach; 
             }else{
                 echo "No hay gatos en adopción en estos momentos";

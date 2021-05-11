@@ -6,21 +6,41 @@
                         
             foreach( $adopciones as $adopcion ): 
 ?>
-                <form action="<?= base_url("index.php/adopciones/modificar_adopcion");?>" method="post" enctype="multipart/form-data">
+                <form class="formulario-admin" action="<?= base_url("index.php/adopciones/modificar_adopcion");?>" method="post" enctype="multipart/form-data">
+                    <div class="centrar-imagen">
+                        <?php if( $adopcion['foto'] != '0') { 
+                                ?>
+                                    <img  src="<?= base_url("subidas/adopciones/" . $adopcion['foto'])?> " alt="adopcion">
+                                <?php } else { 
+                                ?>
+                                    <img class= "vista" src="<?= base_url("subidas/gatos/sombra.png")?> " alt="gato"></td>
+                        <?php } ?>
+                    </div>
                     <input type="hidden" name="idadopcion" value="<?=$adopcion['idadopcion']?>">
-                    <label>Nombre en la adopción</label>
-                    <input type="text" name="nuevonombre" id="nuevonombre" value= "<?=$adopcion['nuevonombre']?>" required>
+                    <div class="contenedor-apartados">
 
-                    <label>Fecha de la adopción</label><br>
-                    <input type="date" name="fecha" value= <?= $adopcion['fecha'] ?>><br>
-                    <img  src="<?= base_url("subidas/adopciones/" . $adopcion['foto'])?> " alt="adopcion">
-                    <label>Cambiar imagen</label>
-                    <input type="hidden" name="imagen" value="<?=$adopcion['foto']?>">
-                    <input type="file" name="file" id="file" accept=".jpg, .png, .gif, .jpeg"> <br>
-                    <?php if(isset($error)) { ?>
-                        <div class="error_modal"><?= $error;?></div>
-                    <?php } ?>
-                    <button type="submit">Actualizar</button>
+                        <div class="apartado-form">
+                            <label>Nombre en la adopción</label>
+                            <input type="text" name="nuevonombre" id="nuevonombre" value= "<?=$adopcion['nuevonombre']?>" required>
+                        </div>
+
+                        <div class="apartado-form">
+                            <label>Fecha de la adopción</label><br>
+                            <input type="date" name="fecha" value= <?= $adopcion['fecha'] ?>><br>
+                        </div>
+
+                        <div class="apartado-form">
+                            <label>Cambiar imagen</label>
+                            <input type="hidden" name="imagen" value="<?=$adopcion['foto']?>">
+                            <input type="file" name="file" id="file" accept=".jpg, .png, .gif, .jpeg"> <br>
+                        </div>
+                        <?php if(isset($error)) { ?>
+                            <div class="error_modal"><?= $error;?></div>
+                        <?php } ?>
+                    </div>
+                    <div class="alin-derecha">
+                        <button class="boton" type="submit">Actualizar</button>
+                    </div>
                 </form>
             <?php endforeach; 
         }else{

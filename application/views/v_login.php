@@ -34,7 +34,7 @@
                     </div> 
                 </div>
                 <div class="alin-derecha">
-                <button>Validar</button>
+                <button class="boton">Validar</button>
                 </div>
             </fieldset>
 

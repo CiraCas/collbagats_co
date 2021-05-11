@@ -1,7 +1,7 @@
 <h2>Usuarios</h2>
 <section>
     <h3>Añadir usuario</h3>
-    <form  name="formulario" action="<?= base_url("index.php/usuarios/insertar_usuario");?>" method="post" onsubmit="return validaCampos();" >
+    <form  class="formulario-admin" name="formulario" action="<?= base_url("index.php/usuarios/insertar_usuario");?>" method="post" onsubmit="return validaCampos();" >
         <label>Nombre*</label>
         <input type="text" name="nombre" id="nombre" required>
 
@@ -25,11 +25,11 @@
         </fieldset>
         <p>*Campos obligatorios</p>
         <p>La contraseña se asigna automáticamente como 212223. El usuario deberá cambiarla en su primera conexión.</p>
-        <button>Agregar</button>
+        <button class="boton">Agregar</button>
     </form>
 </section>
 <section>
-    <table id="table_id" class="display" border='1'>
+    <table id="table_id" class="display tabla-admin" border='1'>
         <thead>
             <tr>
                 <th>Email</th>

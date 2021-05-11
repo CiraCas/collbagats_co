@@ -6,7 +6,7 @@
                         
             foreach( $noticias as $noti ): 
 ?>
-                <form action="<?= base_url("index.php/noticias/modificar_noticia");?>" method="post" enctype="multipart/form-data">
+                <form class="formulario-admin" action="<?= base_url("index.php/noticias/modificar_noticia");?>" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="idactualidad" value="<?=$noti['idactualidad']?>">
                     <label>Título</label>
                     <input type="text" name="titulo" id="titulo" value= "<?=$noti['titulo']?>" required>
@@ -22,7 +22,7 @@
                     <?php if(isset($error)) { ?>
                         <div class="error_modal"><?= $error;?></div>
                     <?php } ?>
-                    <button type="submit">Actualizar</button>
+                    <button class="boton" type="submit">Actualizar</button>
                 </form>
             <?php endforeach; 
         }else{
