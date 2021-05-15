@@ -2,34 +2,49 @@
 <section>
     <h3>Añadir usuario</h3>
     <form  class="formulario-admin" name="formulario" action="<?= base_url("index.php/usuarios/insertar_usuario");?>" method="post" onsubmit="return validaCampos();" >
-        <label>Nombre*</label>
-        <input type="text" name="nombre" id="nombre" required>
-
-        <label>Primer apellido*</label>
-        <input type="text" name="apellido1" id="apellido1" required>
-
-        <label>Segundo apellido</label>
-        <input type="text" name="apellido2" id="apellido2">
-
-        <label>Email*</label>
-        <input type="email" name="mail" id="mail" required>
-        <span id="msgemail"></span>
-
-        <div></div>
-        <fieldset>
-            <legend>Permisos de usuario*</legend>
-            <label>Master</label>
-            <input type="radio" name="permisos" value= 1 > <br>
-            <label>Usuario limitado</label>
-            <input type="radio" name="permisos" value= 2 checked> <br>
-        </fieldset>
-        <p>*Campos obligatorios</p>
-        <p>La contraseña se asigna automáticamente como 212223. El usuario deberá cambiarla en su primera conexión.</p>
-        <button class="boton">Agregar</button>
+        <div class="contenedor-adoptante">
+            <div class="apartado-adop">
+                <label>Nombre*</label>
+                <input class="input-text" type="text" name="nombre" id="nombre" required>
+           </div>
+ 
+            <div class="apartado-adop">
+                <label>Primer apellido*</label>
+                <input class="input-text" type="text" name="apellido1" id="apellido1" required>
+            </div>
+ 
+            <div class="apartado-adop">
+                <label>Segundo apellido</label>
+                <input class="input-text" type="text" name="apellido2" id="apellido2">
+            </div>
+ 
+            <div class="apartado-adop">
+                <label>Email*</label>
+                <input class="input-text" type="email" name="mail" id="mail" required>
+                <span id="msgemail"></span>
+            </div>
+ 
+            <div class="apartado-adop">
+            <div></div>
+                <fieldset>
+                    <legend>Permisos de usuario*</legend>
+                    <div>Master</div>
+                    <input type="radio" name="permisos" value= 1 > <br>
+                    <div>Usuario limitado</div>
+                    <input type="radio" name="permisos" value= 2 checked> <br>
+                </fieldset>
+            </div>
+        </div>
+        <p class="campos-oblig">*Campos obligatorios</p>
+        <p class="campos-oblig">*La contraseña se asigna automáticamente como 212223. El usuario deberá cambiarla en su primera conexión.</p>
+        <div class="alin-derecha">
+            <button class="boton">Agregar</button>
+        </div>
     </form>
 </section>
 <section>
-    <table id="table_id" class="display tabla-admin" border='1'>
+    <h3>Usuarios Registrados</h3>
+    <table id="table_id" class="display tabla-admin" >
         <thead>
             <tr>
                 <th>Email</th>

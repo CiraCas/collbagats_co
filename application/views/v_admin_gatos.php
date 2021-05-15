@@ -4,12 +4,12 @@
     <form class="formulario-admin" action="<?= base_url("index.php/gatos/insertar_gato");?>" method="post" enctype="multipart/form-data">
         <div class="contenedor-apartados">
             <div class="apartado-form">
-                <label>Nombre</label>
+                <label>Nombre*</label>
                 <input type="text" class="input-text" name="nombre" id="nombre" required>
             </div>
             <div class="apartado-form">
                 <fieldset>
-                    <legend>Sexo</legend>
+                    <legend>Sexo*</legend>
                     <div>Macho</div>
                     <input type="radio" name="genero" value= "M" checked>
                     <div>Hembra</div>
@@ -28,6 +28,7 @@
                 <div class="error_modal"><?= $error;?></div>
             <?php } ?>
         </div>
+        <p class="campos-oblig">*Campos obligatorios</p>
         <div class="alin-derecha">
             <button class="boton" type="submit">Agregar</button>
         </div>

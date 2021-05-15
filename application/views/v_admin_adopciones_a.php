@@ -8,22 +8,34 @@
     ?>
        
         <form class="formulario-admin" name="formulario" action="<?= base_url("index.php/adopciones/modificar_adoptante");?>" method="post" onsubmit="return  validaAdoptante();">
-            <input type="hidden" name="dni1" value="<?=$adoptante['dni']?>">
-            <label>DNI*</label>
-            <input type="text" name="dni" id="dni" value="<?=$adoptante['dni']?>">
-            <span id="msgdni"></span>
-            <label>Nombre*</label>
-            <input type="text" name="nombre" id="nombre" value= "<?=$adoptante['nombre']?>" required>
+            <div class="contenedor-adoptante"> 
+                <input type="hidden" name="dni1" value="<?=$adoptante['dni']?>">
+                
+                <div class="apartado-adop">
+                    <label>DNI*</label>
+                    <input class="input-text" type="text" name="dni" id="dni" value="<?=$adoptante['dni']?>">
+                    <span id="msgdni"></span>
+                </div>
 
-            <label>Primer apellido*</label>
-            <input type="text" name="apellido1" id="apellido1" value= "<?=$adoptante['apellido1']?>" required>
+                <div class="apartado-adop">
+                    <label>Nombre*</label>
+                    <input class="input-text" type="text" name="nombre" id="nombre" value= "<?=$adoptante['nombre']?>" required>
+                </div>
 
-            <label>Segundo apellido</label>
-            <input type="text" name="apellido2" id="apellido2" value= "<?=$adoptante['apellido2']?>">
+                <div class="apartado-adop">
+                    <label>Primer Apellido*</label>
+                    <input class="input-text" type="text" name="apellido1" id="apellido1" value= "<?=$adoptante['apellido1']?>" required>
+                </div>
 
-            <p>*Campos obligatorios</p>
-            
-            <button class="boton">Actualizar</button>
+                <div class="apartado-adop">
+                    <label>Segundo Apellido</label>
+                    <input class="input-text" type="text" name="apellido2" id="apellido2" value= "<?=$adoptante['apellido2']?>">
+                </div>
+                <p class="campos-oblig">*Campos obligatorios</p>
+                <div class="alin-derecha">
+                    <button class="boton">Actualizar</button>
+                </div>
+            </div>
         </form>
 
             <?php endforeach; 

@@ -64,7 +64,18 @@
         }
 
         public function borrar_adopcion ($idadopcion) {
-            $this->m_adopciones->delete_adopcion($idadopcion);
+
+            $adopcion = $this -> m_adopciones -> select_adopcion_id($idadopcion);
+           
+            $imagen = $adopcion[0]["foto"];
+            if($adopcion[0]["foto"] != '0'){
+                unlink("./subidas/adopciones/" . $imagen);
+                $this->m_adopciones->delete_adopcion($idadopcion);
+
+            } else {
+                $this->m_adopciones->delete_adopcion($idadopcion);
+            }
+           
             redirect( base_url('index.php/adopciones/adopcion'));
         }
 

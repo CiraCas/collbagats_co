@@ -20,17 +20,17 @@
                     <div class="contenedor-apartados">
 
                         <div class="apartado-form">
-                            <label>Nombre en la adopción</label>
-                            <input type="text" name="nuevonombre" id="nuevonombre" value= "<?=$adopcion['nuevonombre']?>" required>
+                            <label>Nombre Adoptado*</label>
+                            <input class="input-text" type="text" name="nuevonombre" id="nuevonombre" value= "<?=$adopcion['nuevonombre']?>" required>
                         </div>
 
                         <div class="apartado-form">
-                            <label>Fecha de la adopción</label><br>
-                            <input type="date" name="fecha" value= <?= $adopcion['fecha'] ?>><br>
+                            <label>Fecha de la Adopción*</label>
+                            <input class="input-text" type="date" name="fecha" value= <?= $adopcion['fecha'] ?>><br>
                         </div>
 
                         <div class="apartado-form">
-                            <label>Cambiar imagen</label>
+                            <label>Cambiar Imagen</label>
                             <input type="hidden" name="imagen" value="<?=$adopcion['foto']?>">
                             <input type="file" name="file" id="file" accept=".jpg, .png, .gif, .jpeg"> <br>
                         </div>
@@ -38,6 +38,7 @@
                             <div class="error_modal"><?= $error;?></div>
                         <?php } ?>
                     </div>
+                    <p class="campos-oblig">*Campos obligatorios</p>
                     <div class="alin-derecha">
                         <button class="boton" type="submit">Actualizar</button>
                     </div>

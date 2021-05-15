@@ -12,18 +12,18 @@
                                     <img class= "vista" src="<?= base_url("subidas/gatos/" . $gato['imagen'])?> " alt="gato">
                                 <?php } else { 
                                 ?>
-                                    <img class= "vista" src="<?= base_url("subidas/gatos/sombra.png")?> " alt="gato"></td>
+                                    <img class= "vista" src="<?= base_url("subidas/gatos/sombra.png")?> " alt="gato">
                         <?php } ?>
                     </div>
                     <input type="hidden" name="idgato" value="<?=$gato['idgato']?>">
                     <div class="contenedor-apartados">
                         <div class="apartado-form">
-                            <label>Nombre</label>
+                            <label>Nombre*</label>
                             <input type="text" class="input-text" name="nombre" id="nombre" value= "<?=$gato['nombre']?>" required>
                         </div>
                         <div class="apartado-form">
                             <fieldset>
-                                <legend>Sexo</legend>
+                                <legend>Sexo*</legend>
                                 <?php if($gato['sexo'] != 'H'){?>
                                     <div>Macho</div>
                                     <input type="radio" name="genero" value= "M" checked>
@@ -50,6 +50,7 @@
                             <div class="error_modal"><?= $error;?></div>
                         <?php } ?>
                     </div>
+                    <p class="campos-oblig">*Campos obligatorios</p>
                     <div class="alin-derecha">
                         <button class="boton" type="submit">Actualizar</button>
                     </div>

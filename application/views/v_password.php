@@ -23,7 +23,9 @@
                 <label>Repite la nueva contraseña</label>
                 <input class="input-text" type="password" name="password2">
                 <span id="msgpassword2"></span>
-                <button>Cambiar</button>
+                <div class="alin-derecha">
+                    <button class="boton">Cambiar</button>
+                </div>
             </form>
 
 

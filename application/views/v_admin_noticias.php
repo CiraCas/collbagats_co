@@ -2,19 +2,35 @@
 <section>
     <h3>Añade una nueva noticia</h3>
     <form class="formulario-admin" action="<?= base_url("index.php/noticias/insertar_noticia");?>" method="post" enctype="multipart/form-data">
-        <label>Título</label>
-        <input type="text" name="titulo" id="titulo" required>
-        <div></div>
-        <label >Fecha</label>
-        <input type="date" name="fecha" required>
-        <label>descripción</label><br>
-        <textarea type="text" name="descripcion" id="descripcion"></textarea><br>
-        <label>Selecciona Imagen</label>
-        <input type="file" name="file" id="file" accept=".jpg, .png, .gif, .jpeg"> <br>
-        <?php if(isset($error)) { ?>
-            <div class="error_modal"><?= $error;?></div>
-        <?php } ?>
-        <button class="boton" type="submit">Agregar</button>
+        <div class="contenedor-apartados">
+            <div class="apartado-form">
+                <label>Título*</label>
+                <input class="input-text" type="text" name="titulo" id="titulo" required>
+                <div></div>
+            </div>
+
+            <div class="apartado-form">
+                <label >Fecha*</label>
+                <input class="input-text" type="date" name="fecha" required>
+            </div>
+            
+            <div class="apartado-form">
+                <label>Descripción*</label>
+                <textarea class="input-text" type="text" name="descripcion" id="descripcion"></textarea>
+            </div>
+            
+            <div class="apartado-form">
+                <label>Selecciona Imagen</label>
+                <input type="file" name="file" id="file" accept=".jpg, .png, .gif, .jpeg"> 
+                <?php if(isset($error)) { ?>
+                    <div class="error_modal"><?= $error;?></div>
+                <?php } ?>
+            </div>
+        </div>
+        <p class="campos-oblig">*Campos obligatorios</p>
+        <div class="alin-derecha">
+            <button class="boton" type="submit">Agregar</button>
+        </div>
     </form>
 </section>
 <section class="grupos-fotos">
