@@ -34,56 +34,47 @@
         </div>
     </form>
 </section>
-<section>
-    <h3>Gatos en adopción</h3>
-    <table id="table_id" class="display tabla-admin">
-        <thead>
-            <tr>
-                <th>id</th>
-                <th>Foto</th>    
-                <th>Nombre</th>
-                <th>Sexo</th>
-                <th>Descripción</th>
-                <th></th>
 
-            </tr>
-        </thead>   
-        <tbody>
-            <?php 
+<h3>Gatos en adopción</h3>
+<section class="grupos-fotos">
+    <?php 
                 if($gatos != NULL) {
                     
                     foreach( $gatos as $gato ): 
             ?>
-                    <tr>
-                        <td><?=$gato['idgato']?></td>
-                        <td> 
-                        <?php if( $gato['imagen'] != '0') { 
-                        ?>
-                            <img src="<?= base_url("subidas/gatos/" . $gato['imagen'])?> " alt="gato"></td>
-                        <?php } else { 
-                        ?>
-                             <img src="<?= base_url("subidas/gatos/sombra.png")?> " alt="gato"></td>
-                        <?php } ?>
-                        <td><?=$gato['nombre']?></td>
-                        <td><?=$gato['sexo']?></td>
-                        <td><?=$gato['descripcion']?></td>
-                        <td class= "casilla-iconos">
-                        <a href="<?= base_url("index.php/gatos/borrar_gato/". $gato['idgato']);?>">
-                            <i class="fas fa-trash-alt icon-admin"></i>
-                        </a>
-                        <a href="<?= base_url("index.php/gatos/gato2/". $gato['idgato']);?>">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                        </td>
+                   
+                        <section class="grupo-foto">
+                            <h3><?=$gato['idgato']?>. <?=$gato['nombre']?></h3>
+                           <!--  <a href="<?= base_url("index.php/adopciones/adopcion2/". $gato['idgato']);?>"> -->
+                                <?php if( $gato['imagen'] != '0') { 
+                                ?>
+                                    <img class="admin-foto" src="<?= base_url("subidas/gatos/" . $gato['imagen'])?> " alt="gato">
+                                <?php } else { 
+                                ?>
+                                    <img class="admin-foto" src="<?= base_url("subidas/gatos/sombra.png")?> " alt="gato">
+                                <?php } ?>
+                            
+                            <?php  if($gato['sexo'] != 'M') {?>
+                                <i class="fas fa-venus icon-sex"></i>
+                            <?php } else { ?>
+                                <i class="fas fa-mars icon-sex"></i>
+                            <?php } ?>
 
-                    </tr>
+                            <div><?=$gato['descripcion']?></div>
+                            <div>
+                                <a href="<?= base_url("index.php/gatos/borrar_gato/". $gato['idgato']);?>">
+                                    <i  class="fas fa-trash-alt  icon-modif"></i>
+                                </a>
+                                <a href="<?= base_url("index.php/gatos/gato2/". $gato['idgato']);?>">
+                                    <i  class="fas fa-edit icon-modif"></i>
+                                </a>
+                            </div>
+                        </section>
+                   
                 <?php endforeach; 
             }else{
                 echo "No hay gatos en adopción en estos momentos";
             }
             ?>
-            
-
-        </tbody>
-    </table>
+    
 </section>

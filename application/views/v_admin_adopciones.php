@@ -12,10 +12,10 @@
                            <!--  <a href="<?= base_url("index.php/adopciones/adopcion2/". $gato['idgato']);?>"> -->
                                 <?php if( $gato['imagen'] != '0') { 
                                 ?>
-                                    <img src="<?= base_url("subidas/gatos/" . $gato['imagen'])?> " alt="gato">
+                                    <img class="admin-foto" src="<?= base_url("subidas/gatos/" . $gato['imagen'])?> " alt="gato">
                                 <?php } else { 
                                 ?>
-                                    <img src="<?= base_url("subidas/gatos/sombra.png")?> " alt="gato">
+                                    <img class="admin-foto" src="<?= base_url("subidas/gatos/sombra.png")?> " alt="gato">
                                 <?php } ?>
                             
                             <?php  if($gato['sexo'] != 'M') {?>
