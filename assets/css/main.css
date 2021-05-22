@@ -58,14 +58,14 @@ ul{
 table {
   width: 100%;
   font-size: 2rem;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
 }
 
 th {
   padding: 3rem;
   background-color: var(--secundarioOscuro);
   color: var(--blanco);
-  border-top-left-radius: 1rem;
+ 
   
 }
 th, td {
@@ -156,7 +156,12 @@ th, td {
   padding: 0.5rem;
  
 }
-
+.icon-tabla {
+  background-color: var(--azuloscuro);
+  color: var(--secundarioOscuro);
+  font-size: 2.3rem;
+  padding: 0.5rem;
+}
 .icon-modif {
   background-color: var(--secundarioFlojo);
   color: var(--secundarioOscuro);
@@ -164,7 +169,8 @@ th, td {
   padding: 0.5rem;
  
 }
-.icon-modif:hover {
+.icon-modif:hover,
+.icon-tabla:hover {
   color: var(--blanco)
 }
 
@@ -222,11 +228,11 @@ th, td {
 .input-text {
   border: none;
   width: 100%;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 0.5rem;
 }
 .apartado-form textarea {
-  height: 15rem;
+  height: 10rem;
 }
 .formulario label{
   font-weight: bold;
@@ -330,7 +336,19 @@ th, td {
 }
 
 .vista {
-  max-width: 400px;
+  max-width: 380px;
+}
+
+.scroll {
+  overflow-x: auto;
+}
+
+.tabla-primero {
+  border-top-left-radius: 1.5rem;
+}
+
+.tabla-ultimo {
+  border-top-right-radius: 1.5rem;
 }
 /*formularios*/
 
@@ -397,15 +415,14 @@ th, td {
   /*se fuede poner tambien: repeat(3, 1fr); o 33.3% 33.3% 33.3%*/
   column-gap: 2rem;
 
-
 }
-@media (min-width: 480px) {
+@media (min-width: 840px) {
   .grupos-fotos {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (min-width: 1215px) {
+@media (min-width: 1330px) {
 
   .grupos-fotos {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -413,16 +430,22 @@ th, td {
 
 }
 .grupo-foto {
+
   background-color: var(--secundarioFlojo);
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
   margin-top: 2rem;
   border-radius: 2rem;
-  font-weight: bold;
-  padding-bottom: 1.5rem;
+  padding: 1.5rem;
   color: var(--secundarioOscuro);
 
+}
+
+.grupo-foto div {
+  padding: 0.5rem;
+  font-weight: bold;
 }
 
 .centrar-imagen {
@@ -437,5 +460,21 @@ th, td {
 
 .admin-foto {
   max-width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.caja-datos {
+  color: var(--secundarioOscuro);
+  background-color: var(--secundarioFlojo);
+  width: min(80rem, 100%); /*coge 700px o si es más pequeño el 100%. Evita usar media queries */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-size: 1.7rem;
+  font-weight: bold;
 }
 

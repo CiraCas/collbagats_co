@@ -45,7 +45,7 @@
                    
                         <section class="grupo-foto">
                             <h3><?=$gato['idgato']?>. <?=$gato['nombre']?></h3>
-                           <!--  <a href="<?= base_url("index.php/adopciones/adopcion2/". $gato['idgato']);?>"> -->
+                           
                                 <?php if( $gato['imagen'] != '0') { 
                                 ?>
                                     <img class="admin-foto" src="<?= base_url("subidas/gatos/" . $gato['imagen'])?> " alt="gato">
@@ -56,8 +56,10 @@
                             
                             <?php  if($gato['sexo'] != 'M') {?>
                                 <i class="fas fa-venus icon-sex"></i>
+                                <div>Hembra</div>
                             <?php } else { ?>
                                 <i class="fas fa-mars icon-sex"></i>
+                                <div>Macho</div>
                             <?php } ?>
 
                             <div><?=$gato['descripcion']?></div>

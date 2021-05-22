@@ -57,7 +57,7 @@
                             </a>
                             <a href="<?= base_url("index.php/noticias/noticia2/".$noti['idactualidad']);?>">
                                 <button class="boton">Modificar noticia</button>
-                            </a></br>
+                            </a>
                         </section>
                 <?php endforeach; 
             }else{

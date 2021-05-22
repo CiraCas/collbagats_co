@@ -29,9 +29,9 @@
                 <fieldset>
                     <legend>Permisos de usuario*</legend>
                     <div>Master</div>
-                    <input type="radio" name="permisos" value= 1 > <br>
+                    <input type="radio" name="permisos" value= 1 >
                     <div>Usuario limitado</div>
-                    <input type="radio" name="permisos" value= 2 checked> <br>
+                    <input type="radio" name="permisos" value= 2 checked>
                 </fieldset>
             </div>
         </div>
@@ -44,48 +44,51 @@
 </section>
 <section>
     <h3>Usuarios Registrados</h3>
-    <table id="table_id" class="display tabla-admin" >
-        <thead>
-            <tr>
-                <th>Email</th>
-                <th>Nombre</th>
-                <th>Apellido 1</th>
-                <th>Apellido 2</th>
-                <th>Permisos</th>
-            </tr>
-        </thead>   
-        <tbody>
-            <?php foreach( $usuarios as $usu ): ?>
+    <div class="scroll">
+        <table id="table_id" class="display tabla-admin" >
+            <thead>
                 <tr>
-                    <td><?=$usu['mail']?></td>
-                    <td><?=$usu['nombre']?></td>
-                    <td><?=$usu['apellido1']?></td>
-                    <td><?=$usu['apellido2']?></td>
-                    <td><?=$usu['tipo_usuario']?></td>
-                    <td class= "casilla-iconos">
-                        <?php if($usu['idusuario'] != $this->session->idusuario) { ?>
-                            <a href="<?= base_url("index.php/usuarios/borrar_usu/". $usu['idusuario']);?>">
-                                <i class="fas fa-trash-alt icon-admin"></i>
-                            </a>
-                            <!-- <form method='post' action="<?= base_url("index.php/usuarios/borrar_usu");?>">
-                                <input type="hidden" name="idusuario" value="<?=$usu['idusuario']?>">
-                                <button type="submit">
-                                    <i class="fas fa-trash-alt icon-admin"></i>
-                                </button>
-                            </form> -->
-                        <?php } ?>
-                        <a href="<?= base_url("index.php/usuarios/usu2/". $usu['idusuario']);?>">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                        
-                        <!-- <form method="get" action="<?= base_url("index.php/usuarios/borrar_usu/" . $usu['mail']);?>">
-
-                        </form> -->
-                    </td>
+                    <th class="tabla-primero">Email</th>
+                    <th>Nombre</th>
+                    <th>Apellido 1</th>
+                    <th>Apellido 2</th>
+                    <th>Permisos</th>
+                    <th class="tabla-ultimo"></th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table> 
+            </thead>   
+            <tbody>
+                <?php foreach( $usuarios as $usu ): ?>
+                    <tr>
+                        <td><?=$usu['mail']?></td>
+                        <td><?=$usu['nombre']?></td>
+                        <td><?=$usu['apellido1']?></td>
+                        <td><?=$usu['apellido2']?></td>
+                        <td><?=$usu['tipo_usuario']?></td>
+                        <td class= "casilla-iconos">
+                            <?php if($usu['idusuario'] != $this->session->idusuario) { ?>
+                                <a href="<?= base_url("index.php/usuarios/borrar_usu/". $usu['idusuario']);?>">
+                                    <i class="fas fa-trash-alt icon-tabla"></i>
+                                </a>
+                                <!-- <form method='post' action="<?= base_url("index.php/usuarios/borrar_usu");?>">
+                                    <input type="hidden" name="idusuario" value="<?=$usu['idusuario']?>">
+                                    <button type="submit">
+                                        <i class="fas fa-trash-alt icon-admin"></i>
+                                    </button>
+                                </form> -->
+                            <?php } ?>
+                            <a href="<?= base_url("index.php/usuarios/usu2/". $usu['idusuario']);?>">
+                                <i class="fas fa-edit icon-tabla"></i>
+                            </a>
+                            
+                            <!-- <form method="get" action="<?= base_url("index.php/usuarios/borrar_usu/" . $usu['mail']);?>">
+
+                            </form> -->
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table> 
+    </div>
 </section>
 
 

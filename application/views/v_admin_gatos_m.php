@@ -44,7 +44,7 @@
                         <div class="apartado-form">
                             <label>Cambiar imagen</label>
                             <input type="hidden" name="imagen" value="<?=$gato['imagen']?>">
-                            <input type="file" name="file" id="file" accept=".jpg, .png, .gif, .jpeg"> <br>
+                            <input type="file" name="file" id="file" accept=".jpg, .png, .gif, .jpeg">
                         </div>
                         <?php if(isset($error)) { ?>
                             <div class="error_modal"><?= $error;?></div>

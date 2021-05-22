@@ -26,13 +26,13 @@
 
                         <div class="apartado-form">
                             <label>Fecha de la Adopción*</label>
-                            <input class="input-text" type="date" name="fecha" value= <?= $adopcion['fecha'] ?>><br>
+                            <input class="input-text" type="date" name="fecha" value= <?= $adopcion['fecha'] ?>>
                         </div>
 
                         <div class="apartado-form">
                             <label>Cambiar Imagen</label>
                             <input type="hidden" name="imagen" value="<?=$adopcion['foto']?>">
-                            <input type="file" name="file" id="file" accept=".jpg, .png, .gif, .jpeg"> <br>
+                            <input type="file" name="file" id="file" accept=".jpg, .png, .gif, .jpeg"> 
                         </div>
                         <?php if(isset($error)) { ?>
                             <div class="error_modal"><?= $error;?></div>

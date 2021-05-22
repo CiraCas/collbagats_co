@@ -2,7 +2,7 @@
     foreach( $gatos as $gato):
         $idgato = $gato['idgato']; 
 ?> 
-    <section class="grupo-foto">
+    <section class="caja-datos">
         <h2><?=$gato['nombre']?></h2>
 <?php 
     if( $gato['imagen'] != '0') { 
@@ -16,9 +16,11 @@
         
         
         <?php  if($gato['sexo'] != 'M') {?>
-            <i class="fas fa-venus"></i>
+            <i class="fas fa-venus icon-sex"></i>
+            <div>Hembra</div>
         <?php } else { ?>
-            <i class="fas fa-mars"></i>
+            <i class="fas fa-mars icon-sex"></i>
+            <div>Macho</div>
         <?php } ?>
         <div> <?=$gato['descripcion']?> </div>
     </section>      
@@ -60,7 +62,7 @@
         
         <div class="apartado-form">
             <label>Selecciona Imagen</label>
-            <input type="file" name="file" id="file" accept=".jpg, .png, .gif, .jpeg"> <br>
+            <input type="file" name="file" id="file" accept=".jpg, .png, .gif, .jpeg">
             <?php if(isset($error)) { ?>
                 <div class="error_modal"><?= $error;?></div>
             <?php } ?>
