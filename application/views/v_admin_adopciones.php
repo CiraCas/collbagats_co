@@ -54,7 +54,7 @@
                     <img class="admin-foto" src="<?= base_url("subidas/gatos/sombra.png")?> " alt="adopcion">
                 <?php } ?>
 
-                    <div>Nuevo de Adopción:</div>
+                    <div>Nombre de Adopción:</div>
                     <span><?=$adopcion['nuevonombre']?><span>
                     <div>Antes:</div>
                     <span><?=$adopcion['nombre']?></span>

@@ -63,7 +63,13 @@
                         <td><?=$usu['nombre']?></td>
                         <td><?=$usu['apellido1']?></td>
                         <td><?=$usu['apellido2']?></td>
-                        <td><?=$usu['tipo_usuario']?></td>
+                        <?php if($usu['tipo_usuario'] == 1){ ?>
+                            <td> Master </td>
+
+                        <?php } else { ?>
+                            <td> Limitado </td>
+                        <?php } ?>
+                        
                         <td class= "casilla-iconos">
                             <?php if($usu['idusuario'] != $this->session->idusuario) { ?>
                                 <a href="<?= base_url("index.php/usuarios/borrar_usu/". $usu['idusuario']);?>">

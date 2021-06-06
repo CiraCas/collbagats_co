@@ -3,12 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
-    /*function __construct() {
-        parent::__construct();
-
-        //$this->load->model('m_usuarios');
-    
-    }*/
 
 	public function login_v($error = '', $error2 = '') {
         $datos['titulo'] = 'Login de entrada';

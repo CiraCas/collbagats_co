@@ -4,10 +4,9 @@
     class Gatos extends CI_Controller {
         function __construct() {
             parent::__construct();
-    
             $this->load->model('m_gatos');
-        
         }
+
         public function gato($error = '', $error2 = '') {
             if(isset($error) && $error != '')
             $data['error'] = 'Debes introducir un nombre';
@@ -17,7 +16,6 @@
             $data['gatos'] = $this->m_gatos->select_gatos();
             $data['admin_contenido'] = 'v_admin_gatos';
             $data['activa'] = 'gatos';
-            //$data['error'] = $error;
 
             $this->load->view('v_adminmain', $data); 
         }

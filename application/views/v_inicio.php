@@ -55,6 +55,13 @@
       </nav>
     </div>
   </header>
+  <main>
+    <section >
+      <?php $this->load->view($public_main);?>
+    </section>
+  
+  </main>
+
   <script src=<?= base_url("/assets/js/vendor/modernizr-3.11.2.min.js"); ?>></script>
   <script src=<?= base_url("/assets/js/vendor/jquery-3.6.0.min.js"); ?>></script>
   <script src=<?= base_url("/assets/js/plugins.js"); ?>></script>

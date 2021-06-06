@@ -44,8 +44,7 @@
         }
 
         public function insertar_noticia() {
-            $originalDate = $this->input->post('fecha');
-            
+            $originalDate = $this->input->post('fecha'); 
             $newDate = date("Y-m-d", strtotime($originalDate));
             
             $respuesta = $this->grabar_imagen();

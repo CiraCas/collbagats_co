@@ -16,7 +16,7 @@ function validaPassword(){
     let formulario = document.forms["formulario"];
     let password = formulario["password"].value;
     let span =  document.getElementById("msgpassword");
-    //en pattr añado el + porque sin el + si hacía un input de letra/numero/letra ejem= e5g fallaba y la que vimos en clase acepta tildes y _
+    //en pattr añado el + porque sin el + si hacía un input de letra/numero/letra ejem= e5g fallaba
     let pattr = new RegExp("^[0-9a-zA-Z]+$");
     let pattr2 = new RegExp("^.{4,16}$");
     if(pattr.test(password) == false){

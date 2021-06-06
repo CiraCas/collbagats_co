@@ -289,7 +289,7 @@ th, td {
 }
 @media only screen and (min-width:768px){
   .bo-main{
-    width: calc(100% - 325px);
+    width: calc(100% - 325px); /* calcula siempre el 100% menos lo que ocupa el aside */
     min-height: 100vh;
   }
 }
