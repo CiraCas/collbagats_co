@@ -7,8 +7,8 @@ class Inicio extends CI_Controller {
 		$this->load->model('m_gatos');
 	}
 
-	public function index()
-	{
+	public function index(){
+		$data['gatos'] = $this->m_gatos->select_gatos();
 		$data['public_main'] = 'v_principal';
 		$this->load->view('v_inicio',$data);
 	}

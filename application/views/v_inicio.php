@@ -13,6 +13,10 @@
   <link rel="stylesheet" href=<?= base_url("/assets/css/normalize.css");?>>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <link rel="stylesheet" href=<?= base_url("/assets/css/main.css");?>>
+  <!-- bxslider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js" defer></script>
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -43,7 +47,9 @@
       </div>
     </div>
     <h1 class= "contenedor">
-      <img class="logo" src=<?= base_url("assets/img/logo.png");?> alt="logo">
+      <a href="<?= base_url("index.php");?>">
+        <img class="logo-principal" src=<?= base_url("assets/img/logo.png");?> alt="logo">
+      </a>
     </h1>
     <div class="franja">
       <nav class="navegacion-principal contenedor">
@@ -55,7 +61,7 @@
       </nav>
     </div>
   </header>
-  <main>
+  <main >
     <section >
       <?php $this->load->view($public_main);?>
     </section>
@@ -65,6 +71,8 @@
   <script src=<?= base_url("/assets/js/vendor/modernizr-3.11.2.min.js"); ?>></script>
   <script src=<?= base_url("/assets/js/vendor/jquery-3.6.0.min.js"); ?>></script>
   <script src=<?= base_url("/assets/js/plugins.js"); ?>></script>
+  <script src=<?= base_url("/assets/js/principal.js"); ?>></script>
+
 
 
   
