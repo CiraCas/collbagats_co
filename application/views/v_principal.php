@@ -11,14 +11,16 @@
 <section class="seccion-fondo">
     <div class="contenedor"> 
         <h2>Gatos en adopcion</h2>
-        <section class="grupos-fotos">
+        <section>
+        <div class="multiple-items">
         <?php 
                     if($gatos != NULL) {
                         
                         foreach( $gatos as $gato ): 
                 ?>
                     
-                            <section class="grupo-foto-public">
+                            <div >
+                                <section class="grupo-foto-slick">
                                 
                             
                                 <?php if( $gato['imagen'] != '0') { 
@@ -31,23 +33,65 @@
 
                                 <h3><?=$gato['nombre']?></h3>
                                 
-                                <!-- <?php  if($gato['sexo'] != 'M') {?>
-                                    <i class="fas fa-venus icon-sex"></i>
-                                    <div>Hembra</div>
-                                <?php } else { ?>
-                                    <i class="fas fa-mars icon-sex"></i>
-                                    <div>Macho</div>
-                                <?php } ?>-->
                                 <a href="#"></a>
                                     <button class="boton-casilla" >Adopta</button>
                                 </a>
-                            </section>
+                                </section>
+
+                            </div>
                     
                     <?php endforeach; 
                 }else{
                     echo "No hay gatos en adopción en estos momentos";
                 }
                 ?>
+            </div>
+        
+        </section>
+
+    </div>
+</section>
+<section>
+    <div class="contenedor"> 
+        <h2>Actualidad</h2>
+
+        <section>
+        <div class="multiple-items">
+        <?php 
+                    if($noticias != NULL) {
+                        
+                        foreach( $noticias as $noti ): 
+                ?>
+                    
+                            <div >
+                                <section class="grupo-foto-slick fondo">
+                                
+                            
+                                <h3><?=$noti['titulo']?></h3>
+                            <?php if( $noti['imagen'] != '0') { 
+                            ?>
+                                <img class="public-foto" src="<?= base_url("subidas/actualidad/" . $noti['imagen'])?> " alt="noticia">
+                            <?php } else { 
+                            ?>
+                                <img class="public-foto" src="<?= base_url("subidas/actualidad/noImage.jpg")?> " alt="noticia">
+                            <?php } ?>
+                            
+                            <div><?=$noti['fecha']?></div>
+                            <div><?=$noti['descripcion']?></div>
+                                
+                                <a href="#"></a>
+                                    <button class="boton-casilla" >Leer más</button>
+                                </a>
+                                </section>
+
+                            </div>
+                    
+                    <?php endforeach; 
+                }else{
+                    echo "No hay noticias en estos momentos";
+                }
+                ?>
+            </div>
         
         </section>
 

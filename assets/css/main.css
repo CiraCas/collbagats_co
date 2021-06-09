@@ -112,13 +112,14 @@ th, td {
   border: none;
   color: var(--blanco);
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  text-transform: uppercase;
   background-color: var(--primario);
   width: 100%;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   padding: 2rem;
-  margin: -1.5rem;
+  
 }
 
 
@@ -427,6 +428,7 @@ th, td {
 }
 /*grupos datos*/
 
+
 .grupos-fotos, .grupos-fotos-public {
   display: grid;
   grid-template-columns: 1fr;
@@ -457,6 +459,20 @@ th, td {
   border-radius: 0.5rem;
   padding-top: 1.5rem;
   color: var(--secundarioOscuro);
+}
+
+.grupo-foto-slick {
+  background-color: var(--blanco);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-top: 2rem;
+  border-radius: 0.5rem;
+  padding-top: 1.5rem;
+  color: var(--secundarioOscuro);
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
 }
 .grupo-foto {
 
@@ -498,6 +514,10 @@ th, td {
   object-fit: cover;
   border-radius: 0.5rem;
 }
+.fondo {
+  background-color: var(--secundarioMasFlojo) ;
+}
+
 
 .caja-datos {
   color: var(--secundarioOscuro);
